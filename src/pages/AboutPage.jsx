@@ -73,11 +73,14 @@ export const AboutPage = () => {
             <AnimatedSection>
               <span className="badge" style={{ marginBottom: '1rem' }}>About me</span>
               <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>Sandeep Rathi</h1>
-              <p style={{ fontSize: '1.25rem', color: '#fff', marginBottom: '2rem' }}>
-                Hello! I’m Sandeep Rathi, a passionate designer with over 7+ years of experience in creating visually appealing and user-friendly websites, mobile apps, and B2B SaaS applications that are both functional and engaging.
+              <p style={{ fontSize: '1.25rem', color: '#fff', marginBottom: '1.5rem' }}>
+                Hello! I'm Sandeep Rathi, a passionate designer with over 7+ years of experience in creating visually appealing and user-friendly websites, mobile apps, and B2B SaaS applications that are both functional and engaging.
+              </p>
+              <p style={{ marginBottom: '1.5rem' }}>
+                Recently, I've been focused on integrating AI and advanced personalisation into my design process to make digital experiences more intelligent and tailored to individual users.
               </p>
               <p style={{ marginBottom: '2.5rem' }}>
-                Recently, I’ve been focused on integrating AI and advanced personalization into my design process to make digital experiences more intelligent and tailored to individual users.
+                Think of me as the Sherlock Holmes of user problems, minus the hat but definitely with the magnifying glass. With years of experience making products people want to use. I have a natural gift for spotting things that just aren't aligned (both in design and in life).
               </p>
               <Button href="#" variant="primary" style={{ gap: '0.75rem' }}>
                 <Download size={18} /> Download Resume
@@ -85,11 +88,12 @@ export const AboutPage = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <div style={{ background: 'var(--muted)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>Sherlock Holmes of UX</h3>
-                <p style={{ margin: 0 }}>
-                  Think of me as the Sherlock Holmes of user problems, minus the hat but definitely with the magnifying glass. With years of experience making products people want to use, I have a natural gift for spotting things that just aren’t aligned (both in design and in life).
-                </p>
+              <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '100%', minHeight: '420px', background: 'var(--muted)' }}>
+                <img
+                  src="https://framerusercontent.com/images/vlbWul4UcGklOy7Ck8WjAZbKCoY.png"
+                  alt="Sandeep Rathi"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
               </div>
             </AnimatedSection>
           </div>
