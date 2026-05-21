@@ -31,6 +31,9 @@ export const CliX = () => {
             <p style={{ fontSize: '1.35rem', maxWidth: '800px', lineHeight: '1.5', color: '#fff', marginBottom: '3rem' }}>
               CliX is a marketing automation solution designed to help brands streamline, execute, and monitor their customer engagement activities across multiple channels.
             </p>
+            <div className="hero-image" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <img src="https://framerusercontent.com/images/2oynPfN9JCVFQtPk0Ps1OcrYwJ4.png" alt="CliX Dashboard" style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-lg)' }} />
+            </div>
             
             {/* Meta Grid */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', borderTop: '1px solid var(--border)', paddingTop: '2rem' }}>
@@ -90,7 +93,16 @@ export const CliX = () => {
         </div>
       </section>
 
-      {/* Research & Competitive Analysis */}
+{/* Research & Competitive Analysis */}
+<div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '2rem' }}>
+  <img src="https://framerusercontent.com/images/naYWfBtBpvnsVlKq1ArhC6IBKM.png" alt="CliX Brainstorming 1" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  <img src="https://framerusercontent.com/images/0MjINeNLeztRubh9kq04AwHJ4.png" alt="CliX Brainstorming 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  <img src="https://framerusercontent.com/images/tqVUnqqhBJYkjUkhx6OFSDw4LiY.png" alt="CliX Journey" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  <img src="https://framerusercontent.com/images/4uWGbZDQ4RksPq9ioxLy8aKrWs.png" alt="CliX Campaign" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  <img src="https://framerusercontent.com/images/9UYMaRUj9FIVvbO00ULdkFIPg.png" alt="CliX Dashboard 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  <img src="https://framerusercontent.com/images/tlyc8GDcSt1BeUyUiYauefSRX4o.png" alt="CliX Email Template" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  <img src="https://framerusercontent.com/images/nMV5j336apCxSLUUN4Rn5MVtA3k.png" alt="CliX Template" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+</div>
       <section className="section" style={{ background: '#080808' }}>
         <div className="container">
           <AnimatedSection>

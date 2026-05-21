@@ -95,6 +95,38 @@ export const AboutPage = () => {
           </div>
         </div>
       </section>
+      {/* Tool Grid */}
+      <section className="section">
+        <div className="container">
+          <AnimatedSection>
+            <h2 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2rem,4vw,3rem)' }}>Design stack that powers me</h2>
+            <div className="tool-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '1rem', justifyItems: 'center' }}>
+              <img src="https://framerusercontent.com/images/VYREjSesJFovLQJZLUZLXgEB8.svg" alt="Figma" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/4QqkF0Ms0htHylFOgdGYEgI3vZU.png" alt="Framer" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/cu4MfUe9qRDMpZkhNA7m7eIhaM.png" alt="Claude Code" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/WtN70LuAccwymwP9bpQERp8nUKI.png" alt="Google Antigravity" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/8BXqYxWCABQYpygsVTmQQol49G4.svg" alt="Adobe Photoshop" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/ES04aalL1L1mGZxLXAvW4YAm0.svg" alt="Adobe Illustrator" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/ejlfOzqq3m6pOnRugW5I6hrDnk.svg" alt="Canva" style={{ width: '80px', height: 'auto' }} />
+              <img src="https://framerusercontent.com/images/Qkhv72AlYoSCmBh7udmXuCFrE.svg" alt="Google Analytics" style={{ width: '80px', height: 'auto' }} />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      {/* Travel Ticker */}
+      <section className="section">
+        <div className="container">
+          <AnimatedSection>
+            <h2 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2rem,4vw,3rem)' }}>When I am not working, I am travelling</h2>
+            <div className="travel-ticker" style={{ display: 'flex', overflowX: 'auto', gap: '1rem' }}>
+              <img src="https://framerusercontent.com/images/iZPui1eFM6kgyvVNoLggi27xbk.png" alt="Ubud Bali Waterfall" style={{ height: '80px', borderRadius: '0.5rem' }} />
+              <img src="https://framerusercontent.com/images/0NzwlpVm1URAdNdzsuhiK00MnPA.png" alt="Best Pho Soup, Vietnam" style={{ height: '80px', borderRadius: '0.5rem' }} />
+              <img src="https://framerusercontent.com/images/tqK0TtcRNCjyQjnHlXzmUsOMv4Q.png" alt="SNDP Kuta, Bali" style={{ height: '80px', borderRadius: '0.5rem' }} />
+              <img src="https://framerusercontent.com/images/8uiXBudGvmSvipjnRv83jb6EbA.png" alt="Kelingking Beach, Bali" style={{ height: '80px', borderRadius: '0.5rem' }} />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* Workflow */}
       <section className="section" style={{ background: '#080808' }}>

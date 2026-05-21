@@ -12,21 +12,21 @@ export const Home = () => {
       title: "CliX",
       subtitle: "A unified campaign engine to drive customer engagement & ROI",
       tags: ["#SaaS", "#B2B", "#CRM"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      image: "https://framerusercontent.com/images/2oynPfN9JCVFQtPk0Ps1OcrYwJ4.png",
     },
     {
       id: "fatca-crs",
       title: "FATCA-CRS",
       subtitle: "A mechanism for users to share FATCA-CRS related information",
       tags: ["#App", "#Fintech"],
-      image: "https://images.unsplash.com/photo-1616077168712-fc6c788db4af?q=80&w=1200&auto=format&fit=crop",
+      image: "https://framerusercontent.com/images/luSiyMa05IgeA9uZ14JSJ2qHBM.png",
     },
     {
       id: "member-connect",
       title: "Member Connect",
       subtitle: "A networking platform for Tide users to connect and network",
       tags: ["#WebApp"],
-      image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=1200&auto=format&fit=crop",
+      image: "https://framerusercontent.com/images/esewzOyQAK1jQiKmZbeVNLSojPI.png",
     }
   ];
 
@@ -82,6 +82,7 @@ export const Home = () => {
   ];
 
   const [activeFaq, setActiveFaq] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('Websites');
 
   return (
     <div className="framer-grid">
@@ -92,7 +93,7 @@ export const Home = () => {
         <div className="container">
           <AnimatedSection>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '2rem', border: '1px solid var(--border)', background: 'rgba(255,255,255,0.03)', marginBottom: '2rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--muted-foreground)' }}>
-              <Sparkles size={14} className="text-gradient-purple" /> Hi, Sandeep here
+                <img src="https://framerusercontent.com/images/KRORLOhqrNYQyVZH9EqFlzNdKg.png" alt="SNDP Memoji" style={{ width: '32px', height: '32px', borderRadius: '50%', marginRight: '0.5rem' }} /> <Sparkles size={14} className="text-gradient-purple" /> Hi, Sandeep here
             </div>
           </AnimatedSection>
 
@@ -128,6 +129,7 @@ export const Home = () => {
           </AnimatedSection>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '4rem' }}>
+            {/* Case Studies Grid */}
             {caseStudies.map((study, idx) => (
               <AnimatedSection key={study.id} delay={idx * 0.1}>
                 <Link to={`/${study.id}`} className="glass-card" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', padding: '2rem', overflow: 'hidden', minHeight: '400px', textDecoration: 'none', color: 'inherit' }}>
@@ -145,6 +147,62 @@ export const Home = () => {
                 </Link>
               </AnimatedSection>
             ))}
+
+            {/* Plug N Play Section */}
+            <section id="plug-n-play" className="section" style={{ paddingTop: '4rem' }}>
+              <div className="container">
+                <AnimatedSection>
+                  <h2 style={{ marginBottom: '2rem' }}>Plug N Play Websites</h2>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+                    {[
+                      { name: 'Raymo', url: 'https://raymo.framer.website/', img: 'https://framerusercontent.com/images/BmF0jDLuM54wujBCskg9M8nGsjU.png' },
+                      { name: 'Monzaa', url: 'https://monzaa.framer.website/', img: 'https://framerusercontent.com/images/aqgdjIh3RbyijlEg8FfnRir1Uo.png' },
+                      { name: 'Tresky', url: 'https://tresky.framer.website/', img: 'https://framerusercontent.com/images/tKtPKKJJVwWccjQZtkv0SSC3RA.png' }
+                    ].map((item) => (
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" key={item.name} className="glass-card" style={{ padding: '1rem', textAlign: 'center' }}>
+                        <img src={item.img} alt={item.name} style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: 'var(--radius-sm)' }} />
+                        <h3 style={{ marginTop: '0.5rem' }}>{item.name}</h3>
+                      </a>
+                    ))}
+                  </div>
+                </AnimatedSection>
+              </div>
+            </section>
+
+            {/* Portfolio Category Tabs */}
+            <section id="portfolio-categories" className="section" style={{ paddingTop: '4rem' }}>
+              <div className="container">
+                <AnimatedSection>
+                  <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+                    {['Websites', 'Mobile Apps', 'B2B SaaS'].map((cat) => (
+                      <button key={cat} onClick={() => setActiveCategory(cat)} style={{ padding: '0.5rem 1rem', borderRadius: 'var(--radius-sm)', background: activeCategory === cat ? 'rgba(255,255,255,0.1)' : 'transparent', border: '1px solid var(--border)', color: '#fff', cursor: 'pointer' }}>{cat}</button>
+                    ))}
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+                    {(
+                      activeCategory === 'Websites' ? [
+                        { title: 'Marvelous Interior', img: 'https://framerusercontent.com/images/RRz1IvyDEmfjHklC0tJpc6g.png' },
+                        { title: 'Finance', img: 'https://framerusercontent.com/images/cy2sSPXW69Jg6PimptURjAZSaE.png' },
+                        { title: 'Zeepay Payment', img: 'https://framerusercontent.com/images/bAzmR9yTBtIaCsE20YeaokcCBHg.png' }
+                      ] :
+                      activeCategory === 'Mobile Apps' ? [
+                        { title: 'Covid onboarding', img: 'https://framerusercontent.com/images/ubthHrEL4eid83iKwnyhwSZgM5Y.png' },
+                        { title: 'Login', img: 'https://framerusercontent.com/images/HrDMqq8s43PNoHKSeyp19ewpsBA.png' }
+                      ] :
+                      [
+                        { title: 'Kazarion', img: 'https://framerusercontent.com/images/ApAMQ6gWXAYWOl63RLNxJByZ9xY.png' },
+                        { title: 'Gonzore', img: 'https://framerusercontent.com/images/VYv1BQ9usZUikJ5y37gkHVtbaWE.png' }
+                      ]
+                    ).map((item) => (
+                      <div key={item.title} className="glass-card" style={{ padding: '1rem' }}>
+                        <img src={item.img} alt={item.title} style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: 'var(--radius-sm)' }} />
+                        <h4 style={{ marginTop: '0.5rem', textAlign: 'center' }}>{item.title}</h4>
+                      </div>
+                    ))}
+                  </div>
+                </AnimatedSection>
+              </div>
+            </section>
           </div>
         </div>
       </section>

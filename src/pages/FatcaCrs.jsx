@@ -51,6 +51,26 @@ export const FatcaCrs = () => {
 
       {/* Challenge */}
       <section className="section">
+  <div className="hero-image" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+    <img src="https://framerusercontent.com/images/luSiyMa05IgeA9uZ14JSJ2qHBM.png" alt="FatcaCrs Hero" style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-lg)' }} />
+  </div>
+  <div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '2rem' }}>
+    <img src="https://framerusercontent.com/images/pm0CYKZazhpa0fbDnxeAaRiFwRA.png" alt="Discovery" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/euypn6Vo7DwCojyiaiDqSwX0ngg.png" alt="Fatca Userflow 1" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/MiMutRkvsodTg2mUjQOtrohyVF0.png" alt="Userflow 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/Vb0DeBDfO9uEklJcmiGSJzIyu0A.png" alt="Tide Account" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/rCNwd6DqGz0V71OZ3xezQg6NTg.png" alt="Member Profile" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/dOIIXtqUPopjwONLUXcFJRSWEQ.png" alt="FATCA - CRS Intro" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/w0777OvwXM6vfwozWPmzMiQ62IA.png" alt="US person" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/IqLRL8lI5hog6yAHQzkeLl7Ytdo.png" alt="Shareholder SSN" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/7bkf5grZUX6o64UImwBIEmfEI0.png" alt="Add Shareholder" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/v1OVhFr1fjQssZXm793bDn1GLzA.png" alt="Review details" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/wx0VsbUCuJK7XJODpFJ5Y3VWQ.png" alt="US company" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/l91VAYn2QVErP0OD6yckIe8c.png" alt="EIN number" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/V3W1OoPGWPNoaqZ2459SLPyqxM.png" alt="Controlling Person" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/FdB9FKdt6Fof4fWHL687tDxIB0.png" alt="Terms & Conditions" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+    <img src="https://framerusercontent.com/images/qgvWEis0rlEjyUsyDqi1YZhjs.png" alt="Details submitted successfully" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+  </div>
         <div className="container">
           <div className="grid-cols-2">
             <AnimatedSection>

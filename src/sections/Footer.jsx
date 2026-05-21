@@ -41,9 +41,9 @@ export const Footer = () => {
             &copy; {new Date().getFullYear()} Sandeep Rathi. All rights reserved.
           </div>
           <div style={{ display: 'flex', gap: '2rem' }}>
-            <a href="#">LinkedIn</a>
-            <a href="#">Dribbble</a>
-            <a href="#">Twitter</a>
+            <a href="https://www.linkedin.com/in/sndpdesign/">LinkedIn</a>
+            <a href="https://x.com/sndpdesign">X</a>
+            <a href="https://www.instagram.com/sndp.rathi/">Instagram</a>
           </div>
         </div>
       </div>

@@ -48,6 +48,9 @@ export const MemberConnect = () => {
           </AnimatedSection>
         </div>
       </section>
+        <div className="hero-image" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <img src="https://framerusercontent.com/images/esewzOyQAK1jQiKmZbeVNLSojPI.png" alt="Member Connect Hero" style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-lg)' }} />
+        </div>
 
       {/* Problem */}
       <section className="section">
@@ -83,6 +86,18 @@ export const MemberConnect = () => {
           </div>
         </div>
       </section>
+        <div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1px))', gap: '1rem', marginTop: '2rem' }}>
+          <img src="https://framerusercontent.com/images/GJ7SaIpKYvgG5s9lilNdFTI88.png" alt="Discovery 1" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/PEaN8VIWyD2ZazAkKUxJj0Lgjo.png" alt="Discovery 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/GUj29nkDrCgoam7QlhrvnQI7ATE.png" alt="Userflow" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/DxGixgZn6fys0nxFqd2VAPbfSAU.png" alt="Member Connect Flow" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/0IRQwCGUds2PVi4ZslpATZhe6I.png" alt="Service provider profile" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/CjT8qDkTDcCOYR5dc5sAwpBjhBM.png" alt="Listing" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/JACa9SZhl4xuhWUOjcV9vNdLXU.png" alt="Messages" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/xjyfEG9LOFA7AVNGr8vwnGY70c.png" alt="Home Page" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/tR9UpMVf01FbmSVkuWDDn5pab4.png" alt="Onboarding 1" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+          <img src="https://framerusercontent.com/images/3cZAybG6zi8dzM9hWlmqEFmfA.png" alt="Onboarding 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+        </div>
 
       {/* Features */}
       <section className="section" style={{ background: '#080808' }}>
