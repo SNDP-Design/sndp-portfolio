@@ -150,8 +150,8 @@ export const Home = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h1 style={{ maxWidth: '1000px', marginBottom: '3rem', letterSpacing: '-0.02em', lineHeight: 1.15, color: '#fff', fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
-              A creative full-stack designer<br />who solves business problems<br />through design
+            <h1 style={{ maxWidth: '900px', marginBottom: '3rem', letterSpacing: '-0.03em', lineHeight: 1.1, color: '#fff', fontSize: 'clamp(4rem, 7vw, 6rem)', margin: '0 auto 3rem' }}>
+              A creative full-stack<br />designer<br />who solves business<br />problems<br />through design
             </h1>
           </AnimatedSection>
 
