@@ -171,7 +171,6 @@ export const Home = () => {
 
           <AnimatedSection delay={0.3}>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Button href="#work" variant="primary">View Case Studies</Button>
               <Button href="/contact" variant="glass">Let's Talk <ArrowRight size={16} /></Button>
             </div>
           </AnimatedSection>
@@ -183,7 +182,7 @@ export const Home = () => {
         <div className="container">
           <AnimatedSection>
             <div style={{ marginBottom: '4rem' }}>
-              <span className="badge" style={{ marginBottom: '1rem' }}>Case Studies</span>
+              <p style={{ marginBottom: '1rem', color: 'var(--muted-foreground)' }}>Case Studies</p>
               <h2>Detailed projects with Case Studies</h2>
             </div>
           </AnimatedSection>
@@ -229,7 +228,6 @@ export const Home = () => {
           <AnimatedSection>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
               <div>
-                <span className="badge" style={{ marginBottom: '1rem' }}>Ready-made Templates</span>
                 <h2>Plug N Play Websites</h2>
               </div>
             </div>
@@ -270,7 +268,7 @@ export const Home = () => {
         <div className="container">
           <AnimatedSection>
             <div style={{ marginBottom: '3rem' }}>
-              <span className="badge" style={{ marginBottom: '1rem' }}>Portfolio</span>
+              <p style={{ marginBottom: '1rem', color: 'var(--muted-foreground)' }}>Selected Work</p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
                 {Object.keys(portfolioCategories).map((cat) => (
                   <button
@@ -330,7 +328,7 @@ export const Home = () => {
         <div className="container">
           <div className="grid-cols-2">
             <AnimatedSection>
-              <span className="badge" style={{ marginBottom: '1rem' }}>About Me</span>
+              <p style={{ marginBottom: '1rem', color: 'var(--muted-foreground)' }}>About Me</p>
               <h2 style={{ marginBottom: '1.5rem' }}>A designer with founder's mindset</h2>
               <p style={{ marginBottom: '1.5rem' }}>
                 I'm a full-stack designer who loves to handle everything design-related from start to finish for startups. I cover A to Z design needs for startups so they don't have to worry about hiring multiple designers or agencies.
@@ -345,7 +343,7 @@ export const Home = () => {
 
             <AnimatedSection delay={0.2}>
               <div>
-                <h3 style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>Design stack that powers me</h3>
+                <h2 style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>Design stack that powers me</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
                   {tools.map(tool => (
                     <div
@@ -369,7 +367,7 @@ export const Home = () => {
         <div className="container">
           <AnimatedSection>
             <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-              <span className="badge" style={{ marginBottom: '1rem' }}>My Services</span>
+              <p style={{ marginBottom: '1rem', color: 'var(--muted-foreground)' }}>My Services</p>
               <h2>What I offer</h2>
             </div>
           </AnimatedSection>
@@ -395,7 +393,7 @@ export const Home = () => {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <AnimatedSection>
-              <span className="badge" style={{ marginBottom: '1rem' }}>FAQs</span>
+              <p style={{ marginBottom: '1rem', color: 'var(--muted-foreground)' }}>FAQs</p>
               <h2 style={{ marginBottom: '1.5rem' }}>Questions &amp; Answers</h2>
               <p>Everything you need to know about working together to bring your designs to life.</p>
             </AnimatedSection>
