@@ -44,13 +44,14 @@ export const Navbar = () => {
     >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.03em', color: '#fff' }}>
-          SNDP.
+          sndp.
         </Link>
         
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <Link to="/" style={{ fontSize: '0.9rem', fontWeight: 500, color: isLinkActive('/') ? '#fff' : 'var(--muted-foreground)' }}>Home</Link>
           <Link to="/about" style={{ fontSize: '0.9rem', fontWeight: 500, color: isLinkActive('/about') ? '#fff' : 'var(--muted-foreground)' }}>About</Link>
           <Link to="/contact" style={{ fontSize: '0.9rem', fontWeight: 500, color: isLinkActive('/contact') ? '#fff' : 'var(--muted-foreground)' }}>Contact</Link>
+          <a href="#" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--muted-foreground)' }}>Resume</a>
           <Link to="/contact">
             <Button variant="primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}>
               Let's Talk

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { Button } from '../components/Button';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+const IMG = (path) => `https://framerusercontent.com/images/${path}`;
 
 export const CliX = () => {
   return (
@@ -19,195 +21,256 @@ export const CliX = () => {
             </Link>
             
             <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem' }}>
-              <span className="badge">#SaaS</span>
-              <span className="badge">#B2B</span>
-              <span className="badge">#CRM</span>
+              <span className="badge">B2B SaaS Webapp | 8 Weeks</span>
             </div>
             
-            <h1 style={{ marginBottom: '2rem', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
-              CliX — A campaign engine for customer engagement & ROI
+            <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}>
+              CliX - A campaign engine for customer engagement & ROI
             </h1>
             
             <p style={{ fontSize: '1.35rem', maxWidth: '800px', lineHeight: '1.5', color: '#fff', marginBottom: '3rem' }}>
-              CliX is a marketing automation solution designed to help brands streamline, execute, and monitor their customer engagement activities across multiple channels.
+              CliX is a marketing automation solution to help brands streamline and run their customer engagement activities.
             </p>
             <div className="hero-image" style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <img src="https://framerusercontent.com/images/2oynPfN9JCVFQtPk0Ps1OcrYwJ4.png" alt="CliX Dashboard" style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-lg)' }} />
-            </div>
-            
-            {/* Meta Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', borderTop: '1px solid var(--border)', paddingTop: '2rem' }}>
-              <div>
-                <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Role</h4>
-                <p style={{ fontSize: '1.05rem', color: '#fff' }}>Sole Product Designer</p>
-              </div>
-              <div>
-                <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Timeline</h4>
-                <p style={{ fontSize: '1.05rem', color: '#fff' }}>8 Weeks (B2B SaaS Webapp)</p>
-              </div>
-              <div>
-                <h4 style={{ color: 'var(--muted-foreground)', fontSize: '0.875rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Collaborators</h4>
-                <p style={{ fontSize: '1.05rem', color: '#fff' }}>PM, Marketing Manager, Data Analyst, Dev Team</p>
-              </div>
+              <img src={IMG('2oynPfN9JCVFQtPk0Ps1OcrYwJ4.png')} alt="CliX Dashboard" style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-lg)' }} />
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Overview & Problem */}
+      {/* Content Sections */}
       <section className="section">
         <div className="container">
           <div className="grid-cols-2">
             <AnimatedSection>
-              <h2 style={{ marginBottom: '1.5rem' }}>Understanding the Problem</h2>
-              <p style={{ marginBottom: '1.5rem' }}>
-                This project aimed to create a platform enabling marketing professionals to reach customers through various communication channels, ensuring the right message reaches the right segment at the optimal time.
-              </p>
-              <p>
-                Before CliX, brands faced major bottlenecks: fragmented systems, lack of personalization metrics, complex workflows, and no automated feedback loops.
-              </p>
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Project objectives</h4>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem' }}>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>Lack of omnichannel engagement</span>
+                </li>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>Limited automation for engagement</span>
+                </li>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>No interface for campaign performance insights</span>
+                </li>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>No digital medium to request ROI reports</span>
+                </li>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>Lack of an automated quality check process</span>
+                </li>
+              </ul>
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <h3 style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>Key Project Objectives</h3>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
-                  <span>Solve the **lack of omnichannel engagement** across platforms.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
-                  <span>Address the **limited automation** options for engagement lifecycle workflows.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
-                  <span>Deliver an **interface for real-time campaign performance insights**.</span>
-                </li>
-                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
-                  <span>Design a **digital medium to request automated ROI reports**.</span>
-                </li>
-              </ul>
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Understanding the problem</h4>
+              <p style={{ marginBottom: '3rem' }}>
+                This project aimed to create a platform enabling marketing professionals to reach customers through various channels and target the right customers with the correct message.
+              </p>
+              
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>My role</h4>
+              <p style={{ marginBottom: '3rem' }}>
+                I was the sole product designer on this project, working closely with a dedicated product manager, marketing manager, data analyst, and a remote development team.
+              </p>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-{/* Research & Competitive Analysis */}
-<div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginTop: '2rem' }}>
-  <img src="https://framerusercontent.com/images/naYWfBtBpvnsVlKq1ArhC6IBKM.png" alt="CliX Brainstorming 1" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-  <img src="https://framerusercontent.com/images/0MjINeNLeztRubh9kq04AwHJ4.png" alt="CliX Brainstorming 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-  <img src="https://framerusercontent.com/images/tqVUnqqhBJYkjUkhx6OFSDw4LiY.png" alt="CliX Journey" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-  <img src="https://framerusercontent.com/images/4uWGbZDQ4RksPq9ioxLy8aKrWs.png" alt="CliX Campaign" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-  <img src="https://framerusercontent.com/images/9UYMaRUj9FIVvbO00ULdkFIPg.png" alt="CliX Dashboard 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-  <img src="https://framerusercontent.com/images/tlyc8GDcSt1BeUyUiYauefSRX4o.png" alt="CliX Email Template" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-  <img src="https://framerusercontent.com/images/nMV5j336apCxSLUUN4Rn5MVtA3k.png" alt="CliX Template" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
-</div>
       <section className="section" style={{ background: '#080808' }}>
         <div className="container">
+          <div className="grid-cols-2">
+            <AnimatedSection>
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Research</h4>
+              <p style={{ marginBottom: '1.5rem' }}>
+                I started with user research, conducting a series of interviews with marketing & campaign managers to better understand the current process, areas of complexity, and frustrations, and simultaneously, I did the market research and explored similar solutions to understand the users’ needs.
+              </p>
+              <p style={{ marginBottom: '3rem' }}>
+                I synthesised all the research findings and then summarised the information I collected.
+              </p>
+
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Key insights from research</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
+                <div>
+                  <h5 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#fff' }}>Personalization</h5>
+                  <p>There was a high demand for more flexible customer segmentation and targeting options.</p>
+                </div>
+                <div>
+                  <h5 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#fff' }}>Real-time data</h5>
+                  <p>Having immediate access to campaign performance was crucial for making adjustments.</p>
+                </div>
+                <div>
+                  <h5 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#fff' }}>Collaboration</h5>
+                  <p>Marketers often work together on a single campaign, requiring smoother collaboration features.</p>
+                </div>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.2}>
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Competitive analysis</h4>
+              <p style={{ marginBottom: '3rem' }}>
+                With market research, I conducted a competitive analysis of 4 big players HubSpot Marketing Hub, Salesforce Marketing Cloud, Mailchimp, and Zoho Campaigns to identify strengths and weaknesses in existing solutions.
+              </p>
+              
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Key takeaways</h4>
+              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--muted-foreground)', marginBottom: '3rem' }}>
+                <li>Most competitors struggle to balance user-friendly interfaces with deep customization options. While tools like Mailchimp offer ease of use, they often lack advanced segmentation features.</li>
+                <li>Platforms like Salesforce Marketing Cloud provide powerful capabilities but have a steep learning curve.</li>
+                <li>The ability to customize campaigns, templates, and workflows remains a critical pain point for marketers across platforms.</li>
+              </ul>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+      
+      <section className="section">
+        <div className="container">
           <AnimatedSection>
-            <h2 style={{ marginBottom: '3rem' }}>Research & Competitive Landscape</h2>
+            <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Team brainstorming</h4>
+            <p style={{ marginBottom: '2rem' }}>
+              For brainstorming, we used Whimsical, as we were all working remotely. Every week we had team meetings to check the progress and decide the future course of the project.
+            </p>
+            <div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '4rem' }}>
+              <img src={IMG('naYWfBtBpvnsVlKq1ArhC6IBKM.png')} alt="CliX Brainstorming 1" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+              <img src={IMG('0MjINeNLeztRubh9kq04AwHJ4.png')} alt="CliX Brainstorming 2" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <h2 style={{ marginBottom: '3rem', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Final design</h2>
           </AnimatedSection>
           
-          <div className="grid-cols-2" style={{ marginBottom: '4rem' }}>
+          {/* Features */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', marginBottom: '4rem' }}>
             <AnimatedSection>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Key Insights from User Interviews</h3>
-              <p style={{ marginBottom: '1rem' }}>
-                I synthesized findings from deep-dive interviews with marketing & campaign managers:
-              </p>
-              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--muted-foreground)' }}>
-                <li><strong>Granular Targeting:</strong> High demand for more flexible customer segmentation and targeting options.</li>
-                <li><strong>Real-time loops:</strong> Immediate access to campaign performance metrics was crucial to making adjustments.</li>
-                <li><strong>Collaborative workspaces:</strong> Marketers often work together on a single campaign, requiring smoother workflows.</li>
-              </ul>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Personalise every customer interaction within one dashboard</h3>
+              <p style={{ marginBottom: '2rem' }}>I envisioned a single platform for teams to view performance across all channels. The dashboard offers detailed insights into campaign engagement rates, ROI, and the effectiveness of different segments.</p>
+              <img src={IMG('9UYMaRUj9FIVvbO00ULdkFIPg.png')} alt="CliX Dashboard" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+            </AnimatedSection>
+            
+            <AnimatedSection>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Automated journey builder to create customer lifecycle</h3>
+              <p style={{ marginBottom: '2rem' }}>I focused on automating customer journeys based on predefined lifecycle templates. This feature allowed marketing teams to engage customers at the right time and track the success of each campaign.</p>
+              <img src={IMG('tqVUnqqhBJYkjUkhx6OFSDw4LiY.png')} alt="CliX Journey" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
             </AnimatedSection>
 
-            <AnimatedSection delay={0.2}>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Competitive Takeaways</h3>
-              <p style={{ marginBottom: '1rem' }}>
-                I audited 4 key players: <strong>HubSpot Marketing Hub, Salesforce Marketing Cloud, Mailchimp, and Zoho Campaigns</strong>:
-              </p>
-              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--muted-foreground)' }}>
-                <li>Most competitors struggle to balance user-friendly UI with deep customization.</li>
-                <li>Tools like Mailchimp are easy to use but lack advanced custom segmentation.</li>
-                <li>Enterprise platforms like Salesforce offer power but have a very steep learning curve.</li>
-              </ul>
+            <AnimatedSection>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Track insights & manage all campaigns via a single interface</h3>
+              <p style={{ marginBottom: '2rem' }}>With the new interface now, teams can access insights from all customer communication channels and manage them effectively. Campaigns can also be uploaded in bulk to save time and effort.</p>
+              <img src={IMG('4uWGbZDQ4RksPq9ioxLy8aKrWs.png')} alt="CliX Campaign" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Drag & drop email builder to create professional emails</h3>
+              <p style={{ marginBottom: '2rem' }}>With this feature, teams will be able to create professional-looking emails without coding. This feature simplified campaign creation, allowing businesses to focus on messaging rather than technical details.</p>
+              <img src={IMG('tlyc8GDcSt1BeUyUiYauefSRX4o.png')} alt="CliX Email Template" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Design, code, or use pre-existing templates for your campaign</h3>
+              <p style={{ marginBottom: '2rem' }}>Users can use pre-built templates for their campaigns to reduce repetitive manual setup.</p>
+              <img src={IMG('nMV5j336apCxSLUUN4Rn5MVtA3k.png')} alt="CliX Template" style={{ width: '100%', borderRadius: 'var(--radius-lg)' }} />
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Final Design & Features */}
-      <section className="section">
-        <div className="container">
-          <AnimatedSection>
-            <h2 style={{ marginBottom: '1rem' }}>The Final Product</h2>
-            <p style={{ marginBottom: '4rem', maxWidth: '600px' }}>
-              We crafted an interface that merges power with simple, drag-and-drop operations, reducing manual work for marketing teams.
-            </p>
-          </AnimatedSection>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-            <AnimatedSection>
-              <div className="glass-card" style={{ padding: '2rem', height: '100%' }}>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Unified Campaign Dashboard</h3>
-                <p style={{ fontSize: '0.95rem' }}>Personalize every customer interaction within one dashboard. Track insights & manage all campaigns via a single interface.</p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.1}>
-              <div className="glass-card" style={{ padding: '2rem', height: '100%' }}>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Automated Journey Builder</h3>
-                <p style={{ fontSize: '0.95rem' }}>Automate customer journeys based on predefined lifecycle templates. Create customer life cycle paths without complex logic.</p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="glass-card" style={{ padding: '2rem', height: '100%' }}>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Drag & Drop Email Builder</h3>
-                <p style={{ fontSize: '0.95rem' }}>Design, code, or use pre-existing templates for your campaign. Create professional emails without writing a line of code.</p>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Testing & Validation */}
       <section className="section" style={{ background: '#080808' }}>
         <div className="container">
           <div className="grid-cols-2">
             <AnimatedSection>
-              <h2 style={{ marginBottom: '1.5rem' }}>Testing & Validation</h2>
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Testing & Validation</h4>
               <p style={{ marginBottom: '1.5rem' }}>
-                I conducted multiple rounds of usability testing with 6 marketing specialists, focusing on workflow efficiency and layout clarity.
+                I conducted multiple rounds of usability testing with 6 marketing specialists, focusing on the ease of use and efficiency of the new features.
               </p>
-              <p>
-                Feedback was overwhelmingly positive, but users wanted more flexible templates inline, leading to designs that allow editing without leaving the main campaign builder. We also added real-time alerts for campaign milestones.
+              <p style={{ marginBottom: '1.5rem' }}>
+                Feedback was largely positive, with users praising the simplified flow. However, a few areas for improvement were identified:
               </p>
+              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
+                <li>Users requested more flexible templates that could be tailored without leaving the campaign creation page.</li>
+                <li>Users wanted push notifications for campaign milestones (when a certain performance threshold was reached).</li>
+              </ul>
+              <p style={{ marginBottom: '3rem' }}>
+                Based on this feedback, I iterated on the designs and shared them with the dev team.
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
+                <div>
+                  <h5 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#fff' }}>Template customization</h5>
+                </div>
+                <div>
+                  <h5 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#fff' }}>Real-time alerts</h5>
+                </div>
+              </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <div className="glass" style={{ padding: '3rem', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px solid var(--border)' }}>
-                <h3 style={{ fontSize: '4.5rem', color: '#fff', marginBottom: '0.5rem' }}>-40%</h3>
-                <h4 style={{ textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>Campaign Setup Time</h4>
-                <p style={{ fontSize: '1rem', margin: 0 }}>
-                  Successfully rolled out to marketing teams. Users praised the real-time feedback loops and simplified creation wizard.
-                </p>
-              </div>
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Final outcome</h4>
+              <p style={{ marginBottom: '2rem' }}>
+                The Clix Campaign Engine was successfully launched and adopted by the marketing teams. The automation features reduced campaign setup time by 40%, and the real-time dashboard increased the speed at which marketing teams could optimize their campaigns.
+              </p>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem' }}>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>Massive reduction in overall campaign setup time</span>
+                </li>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>Improvement in real-time decision making accuracy</span>
+                </li>
+                <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <CheckCircle2 size={20} style={{ color: '#fff', marginTop: '0.2rem', shrink: 0 }} />
+                  <span>Positive feedback from users who tested the platform</span>
+                </li>
+              </ul>
+              
+              <h4 style={{ marginBottom: '1.5rem', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Reflection</h4>
+              <p style={{ marginBottom: '3rem' }}>
+                This project was a great example of how user-centered design can make a significant impact on a business’s bottom line. By deeply understanding the pain points and goals of the users, we were able to create a product that simplified their workflow, increased productivity, and ultimately drove better results. I learned the importance of flexibility in design, ensuring that the solution could serve both novice and experienced users. Additionally, I realised the value of real-time feedback loops, which enable marketers to continuously optimise their campaigns.
+              </p>
+              
+              <Button href="#" variant="primary" style={{ display: 'inline-flex' }}>Check out CliX in action <ArrowRight size={16} /></Button>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Explore Next */}
-      <section className="section" style={{ textAlign: 'center' }}>
+      <section className="section" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <AnimatedSection>
-            <p style={{ marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Explore Next Project</p>
-            <h2 style={{ marginBottom: '2.5rem' }}>FATCA-CRS Compliance Flow</h2>
-            <Link to="/fatca-crs">
-              <Button variant="primary">Next Project <ArrowRight size={16} /></Button>
-            </Link>
+            <h2 style={{ marginBottom: '3rem', textAlign: 'center' }}>Explore next projects​</h2>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+              <Link to="/fatca-crs" className="glass-card" style={{ padding: '2rem', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                    <span className="badge"># App</span>
+                    <span className="badge"># Fintech</span>
+                  </div>
+                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>FATCA-CRS</h3>
+                  <p style={{ color: 'var(--muted-foreground)', marginBottom: '2rem' }}>A mechanism for users to share FATCA-CRS related information</p>
+                </div>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: '#fff', fontSize: '0.95rem' }}>View case study <ArrowRight size={16} /></span>
+              </Link>
+              
+              <Link to="/member-connect" className="glass-card" style={{ padding: '2rem', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                    <span className="badge"># WebApp</span>
+                  </div>
+                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Member Connect</h3>
+                  <p style={{ color: 'var(--muted-foreground)', marginBottom: '2rem' }}>A networking platform for Tide users to connect and network</p>
+                </div>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: '#fff', fontSize: '0.95rem' }}>View case study <ArrowRight size={16} /></span>
+              </Link>
+            </div>
           </AnimatedSection>
         </div>
       </section>

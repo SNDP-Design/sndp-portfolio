@@ -117,45 +117,6 @@ export const AboutPage = () => {
           </AnimatedSection>
         </div>
       </section>
-      {/* Travel Ticker */}
-      <section className="section">
-        <div className="container">
-          <AnimatedSection>
-            <h2 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2rem,4vw,3rem)' }}>When I am not working, I am travelling</h2>
-            <div className="travel-ticker" style={{ display: 'flex', overflowX: 'auto', gap: '1rem' }}>
-              <img src="https://framerusercontent.com/images/iZPui1eFM6kgyvVNoLggi27xbk.png" alt="Ubud Bali Waterfall" style={{ height: '80px', borderRadius: '0.5rem' }} />
-              <img src="https://framerusercontent.com/images/0NzwlpVm1URAdNdzsuhiK00MnPA.png" alt="Best Pho Soup, Vietnam" style={{ height: '80px', borderRadius: '0.5rem' }} />
-              <img src="https://framerusercontent.com/images/tqK0TtcRNCjyQjnHlXzmUsOMv4Q.png" alt="SNDP Kuta, Bali" style={{ height: '80px', borderRadius: '0.5rem' }} />
-              <img src="https://framerusercontent.com/images/8uiXBudGvmSvipjnRv83jb6EbA.png" alt="Kelingking Beach, Bali" style={{ height: '80px', borderRadius: '0.5rem' }} />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Workflow */}
-      <section className="section" style={{ background: '#080808' }}>
-        <div className="container">
-          <AnimatedSection>
-            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-              <span className="badge" style={{ marginBottom: '1rem' }}>Methodology</span>
-              <h2>My creative workflow</h2>
-            </div>
-          </AnimatedSection>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-            {steps.map((step, idx) => (
-              <AnimatedSection key={step.num} delay={idx * 0.1}>
-                <div className="glass-card" style={{ padding: '2rem', height: '100%', border: '1px solid var(--border)' }}>
-                  <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--muted-foreground)', marginBottom: '1rem' }}>{step.num}</div>
-                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{step.title}</h3>
-                  <p style={{ fontSize: '0.95rem', margin: 0 }}>{step.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Experience Timeline */}
       <section className="section">
         <div className="container">
@@ -184,6 +145,45 @@ export const AboutPage = () => {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Workflow */}
+      <section className="section" style={{ background: '#080808' }}>
+        <div className="container">
+          <AnimatedSection>
+            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+              <span className="badge" style={{ marginBottom: '1rem' }}>Methodology</span>
+              <h2>My creative workflow</h2>
+            </div>
+          </AnimatedSection>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            {steps.map((step, idx) => (
+              <AnimatedSection key={step.num} delay={idx * 0.1}>
+                <div className="glass-card" style={{ padding: '2rem', height: '100%', border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--muted-foreground)', marginBottom: '1rem' }}>{step.num}</div>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{step.title}</h3>
+                  <p style={{ fontSize: '0.95rem', margin: 0 }}>{step.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Travel Ticker */}
+      <section className="section">
+        <div className="container">
+          <AnimatedSection>
+            <h2 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2rem,4vw,3rem)' }}>When I am not working, I am travelling</h2>
+            <div className="travel-ticker" style={{ display: 'flex', overflowX: 'auto', gap: '1rem' }}>
+              <img src="https://framerusercontent.com/images/iZPui1eFM6kgyvVNoLggi27xbk.png" alt="Ubud Bali Waterfall" style={{ height: '80px', borderRadius: '0.5rem' }} />
+              <img src="https://framerusercontent.com/images/0NzwlpVm1URAdNdzsuhiK00MnPA.png" alt="Best Pho Soup, Vietnam" style={{ height: '80px', borderRadius: '0.5rem' }} />
+              <img src="https://framerusercontent.com/images/tqK0TtcRNCjyQjnHlXzmUsOMv4Q.png" alt="SNDP Kuta, Bali" style={{ height: '80px', borderRadius: '0.5rem' }} />
+              <img src="https://framerusercontent.com/images/8uiXBudGvmSvipjnRv83jb6EbA.png" alt="Kelingking Beach, Bali" style={{ height: '80px', borderRadius: '0.5rem' }} />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

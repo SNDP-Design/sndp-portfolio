@@ -30,7 +30,7 @@ export const Footer = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', paddingTop: '3rem', borderTop: '1px solid var(--border)', marginBottom: '4rem' }}>
           <div>
-            <div style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', marginBottom: '1rem' }}>SNDP.</div>
+            <div style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', marginBottom: '1rem' }}>sndp.</div>
             <p style={{ fontSize: '0.9rem', lineHeight: 1.7, maxWidth: '260px' }}>
               A full-stack designer helping startups build their products from idea to MVP.
             </p>

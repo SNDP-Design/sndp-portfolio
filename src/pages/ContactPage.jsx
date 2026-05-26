@@ -31,10 +31,10 @@ export const ContactPage = () => {
         <div className="container">
           <div className="grid-cols-2">
             <AnimatedSection>
-              <span className="badge" style={{ marginBottom: '1rem' }}>Get in touch</span>
-              <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>Let’s turn your ideas into reality</h1>
+              <span className="badge" style={{ marginBottom: '1rem' }}>Contact</span>
+              <h1 style={{ marginBottom: '1.5rem', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>I'd love to hear from you!</h1>
               <p style={{ fontSize: '1.25rem', color: 'var(--muted-foreground)', marginBottom: '3rem' }}>
-                Building founders' vision, from idea to MVP. Reach out to discuss design consultations, full product redesigns, or marketing campaigns.
+                Building founders' vision, from idea to MVP
               </p>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>

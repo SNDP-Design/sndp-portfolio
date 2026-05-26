@@ -152,6 +152,17 @@ export const Home = () => {
             </h1>
           </AnimatedSection>
 
+          <AnimatedSection delay={0.15}>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+              <span className="badge">Marketing Design</span>
+              <span className="badge">Pitch decks</span>
+              <span className="badge">landing Pages</span>
+              <span className="badge">Framer Websites</span>
+              <span className="badge">Mobile Apps</span>
+              <span className="badge">B2B Saas Apps</span>
+            </div>
+          </AnimatedSection>
+
           <AnimatedSection delay={0.2}>
             <p style={{ maxWidth: '600px', fontSize: '1.25rem', marginBottom: '3rem' }}>
               I'm Sandeep Rathi, a UX/Product designer with 7+ years of experience creating user-friendly websites, mobile apps &amp; B2B SaaS applications. I help startups enhance their product UX, visuals, and marketing design for growth.
