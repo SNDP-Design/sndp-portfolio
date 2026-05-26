@@ -132,48 +132,37 @@ export const Home = () => {
       <div className="bg-gradient-glow"></div>
 
       {/* ─── HERO ─── */}
-      <section className="section" style={{ minHeight: '92vh', display: 'flex', alignItems: 'center', borderBottom: '1px solid var(--border)' }}>
-        <div className="container">
+      <section className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderBottom: 'none' }}>
+        <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          
           <AnimatedSection>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', borderRadius: '2rem', border: '1px solid var(--border)', background: 'rgba(255,255,255,0.03)', marginBottom: '2rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--muted-foreground)' }}>
+            <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img
                 src={IMG('KRORLOhqrNYQyVZH9EqFlzNdKg.png')}
                 alt="SNDP Memoji"
-                style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', marginBottom: '1rem' }}
               />
-              <Sparkles size={14} style={{ color: '#a78bfa' }} />
-              <span>Hi, Sandeep here</span>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.4rem 1rem', borderRadius: '2rem', border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)', fontSize: '0.85rem', fontWeight: 500, color: 'var(--muted-foreground)' }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4ade80' }}></div>
+                <span>Hi, Sandeep here</span>
+              </div>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h1 style={{ maxWidth: '900px', marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
-              A creative <span className="text-gradient">full-stack designer</span> who solves business problems through design
+            <h1 style={{ maxWidth: '1000px', marginBottom: '3rem', letterSpacing: '-0.02em', lineHeight: 1.15, color: '#fff', fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
+              A creative full-stack designer<br />who solves business problems<br />through design
             </h1>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.15}>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-              <span className="badge">Marketing Design</span>
-              <span className="badge">Pitch decks</span>
-              <span className="badge">landing Pages</span>
-              <span className="badge">Framer Websites</span>
-              <span className="badge">Mobile Apps</span>
-              <span className="badge">B2B Saas Apps</span>
-            </div>
-          </AnimatedSection>
-
           <AnimatedSection delay={0.2}>
-            <p style={{ maxWidth: '600px', fontSize: '1.25rem', marginBottom: '3rem' }}>
-              I'm Sandeep Rathi, a UX/Product designer with 7+ years of experience creating user-friendly websites, mobile apps &amp; B2B SaaS applications. I help startups enhance their product UX, visuals, and marketing design for growth.
-            </p>
+            <Link to="/contact">
+              <Button variant="primary" style={{ padding: '0.8rem 2.5rem', fontSize: '1rem', background: '#fff', color: '#000', borderRadius: '9999px' }}>
+                Let's Talk
+              </Button>
+            </Link>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.3}>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Button href="/contact" variant="glass">Let's Talk <ArrowRight size={16} /></Button>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
