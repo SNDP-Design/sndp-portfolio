@@ -8,6 +8,36 @@
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 	<meta charset="utf-8">
+
+    <link rel="icon" href="https://www.sndpdesign.uno/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="https://www.sndpdesign.uno/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://www.sndpdesign.uno/apple-touch-icon.png">
+    <script>
+    (function() {
+        function enforceFavicon() {
+            var favUrl = "https://www.sndpdesign.uno/favicon.png";
+            var links = document.querySelectorAll("link[rel*='icon']");
+            if (links.length === 0) {
+                var l = document.createElement("link");
+                l.rel = "icon";
+                l.type = "image/png";
+                l.href = favUrl;
+                (document.head || document.documentElement).appendChild(l);
+            } else {
+                links.forEach(function(l) {
+                    if (l.getAttribute("href") !== favUrl) {
+                        l.setAttribute("href", favUrl);
+                    }
+                });
+            }
+        }
+        enforceFavicon();
+        if (typeof MutationObserver !== "undefined") {
+            new MutationObserver(enforceFavicon).observe(document.head || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+        }
+    })();
+    </script>
+
 	
 	
 	<script>try{if(localStorage.getItem("__framer_force_showing_editorbar_since")){const n=document.createElement("link");n.rel = "modulepreload";n.href="https://framer.com/edit/init.mjs";document.head.appendChild(n)}}catch(e){}</script>
@@ -15,8 +45,8 @@
     
     <!-- End of headStart -->
 	<meta name="viewport" content="width=device-width">
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    
 
 	<meta name="generator" content="Framer 9fdca5e">
 	<title>Member Connect Case Study — Tide B2B SME Network | Sandeep Rathi</title>
