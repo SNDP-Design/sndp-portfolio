@@ -116,6 +116,16 @@
       transform: scale(1.18) !important;
     }
   </style>
+<script>
+        document.title = "About Sandeep Rathi \u2014 Senior UX & Product Designer";
+        if (typeof MutationObserver !== undefined) {
+            new MutationObserver(function() {
+                if (document.title !== "About Sandeep Rathi \u2014 Senior UX & Product Designer") {
+                    document.title = "About Sandeep Rathi \u2014 Senior UX & Product Designer";
+                }
+            }).observe(document.querySelector(head) || document.documentElement, { childList: true, subtree: true });
+        }
+        </script>
 </head>
 
 <body>

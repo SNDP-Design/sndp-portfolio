@@ -139,6 +139,16 @@
 	}
 	</script>
 
+<script>
+        document.title = "Sandeep Rathi \u2014 UX & Product Designer | B2B SaaS & Fintech";
+        if (typeof MutationObserver !== undefined) {
+            new MutationObserver(function() {
+                if (document.title !== "Sandeep Rathi \u2014 UX & Product Designer | B2B SaaS & Fintech") {
+                    document.title = "Sandeep Rathi \u2014 UX & Product Designer | B2B SaaS & Fintech";
+                }
+            }).observe(document.querySelector(head) || document.documentElement, { childList: true, subtree: true });
+        }
+        </script>
 </head>
 
 <body>
