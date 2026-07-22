@@ -11,6 +11,7 @@ export default defineConfig({
         fatcacrs: resolve(__dirname, 'fatca-crs/index.html'),
         memberconnect: resolve(__dirname, 'member-connect/index.html'),
         clix: resolve(__dirname, 'clix/index.html'),
+        notfound: resolve(__dirname, '404.html'),
       }
     }
   }
