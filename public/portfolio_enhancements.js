@@ -4,7 +4,7 @@
     if (!document.getElementById('portfolio-monochrome-style')) {
         var style = document.createElement('style');
         style.id = 'portfolio-monochrome-style';
-        style.textContent = '.tldr-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; } @media (max-width: 768px) { .tldr-grid { grid-template-columns: 1fr !important; } } .hide-mobile { display: inline-block; } @media (max-width: 640px) { .hide-mobile { display: none !important; } } .sticky-call-btn { transition: transform 0.2s ease; } .sticky-call-btn:hover { transform: scale(1.05); } .sticky-copy-btn:hover { background: rgba(255,255,255,0.2) !important; } .btn-monzaa-primary { transition: all 0.2s ease; } .btn-monzaa-primary:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(255,255,255,0.25); } .btn-monzaa-secondary { transition: all 0.2s ease; } .btn-monzaa-secondary:hover { transform: scale(1.05); background: rgba(255,255,255,0.18) !important; }';
+        style.textContent = '.tldr-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; } @media (max-width: 768px) { .tldr-grid { grid-template-columns: 1fr !important; } } .hide-mobile { display: inline-block; } @media (max-width: 640px) { .hide-mobile { display: none !important; } } .sticky-call-btn { transition: transform 0.2s ease; } .sticky-call-btn:hover { transform: scale(1.05); } .sticky-copy-btn:hover { background: rgba(255,255,255,0.2) !important; } .btn-404-purple { transition: all 0.2s ease; } .btn-404-purple:hover { transform: scale(1.05) !important; background: #9639FF !important; box-shadow: 0 10px 30px rgba(134,41,255,0.6) !important; }';
         document.head.appendChild(style);
     }
 
@@ -52,46 +52,45 @@
         }
     });
 
-    // Monzaa-style 404 Card Customizer
+    // 404 Page Content & Design Match
     function handle404Page() {
         var is404 = window.location.pathname.includes('/404') || document.title.includes('404');
         if (!is404) return;
 
         var h1 = document.querySelector('h1');
         if (h1 && !document.getElementById('monzaa-404-container')) {
-            // Locate hero text container
             var parent = h1.closest('.framer-16f7bbp') || h1.parentElement;
-            var heroContainer = h1.closest('.framer-1chbkjs-container') || h1.closest('[data-framer-name="Hero"]') || parent.parentElement;
 
             if (parent) {
-                // Update badge above title if present
+                // Update badge above title to match '● Error'
                 var badge = parent.previousElementSibling;
                 if (badge) {
-                    badge.innerHTML = '<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;"><span style="width:6px;height:6px;border-radius:50%;background:#ffffff;box-shadow:0 0 6px rgba(255,255,255,0.8);"></span> PAGE NOT FOUND</span>';
+                    badge.innerHTML = '<span style="background:rgba(134,41,255,0.25);border:1px solid rgba(134,41,255,0.4);color:#ffffff;font-size:12px;font-weight:600;padding:5px 16px;border-radius:20px;display:inline-flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#ffffff;box-shadow:0 0 6px rgba(255,255,255,0.8);"></span> Error</span>';
                 }
 
-                h1.innerHTML = '<div style="font-size:72px;font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:8px;background:linear-gradient(180deg,#ffffff 0%,rgba(255,255,255,0.4) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">404</div><div style="font-size:28px;font-weight:700;color:#ffffff;">Lost in Space</div>';
+                // Update H1 title to match '404' + 'Sorry! Page not found'
+                h1.innerHTML = '<div style="font-size:110px;font-weight:800;letter-spacing:-3px;line-height:1;margin-bottom:12px;color:#8629FF;">404</div><div style="font-size:32px;font-weight:700;color:#ffffff;margin-top:12px;">Sorry! Page not found</div>';
 
                 // Update subtitle
                 var pContainer = parent.nextElementSibling;
                 if (pContainer) {
                     var p = pContainer.querySelector('p');
                     if (p) {
-                        p.innerHTML = 'The page you are looking for doesn&apos;t exist, was removed, or had its name changed.';
-                        p.style.cssText = 'color:#a0a0a0;font-size:16px;max-width:500px;margin:12px auto 0 auto;line-height:1.6;';
+                        p.innerHTML = 'It looks like the page you&apos;re looking for doesn&apos;t exist or might have been moved. Don&apos;t worry, let&apos;s get you back on track!';
+                        p.style.cssText = 'color:#b0a0c8;font-size:16px;max-width:540px;margin:16px auto 0 auto;line-height:1.6;';
                     }
                 }
 
-                // Add Monzaa-style Action Buttons
-                var monzaaActions = document.createElement('div');
-                monzaaActions.id = 'monzaa-404-container';
-                monzaaActions.style.cssText = 'display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:32px;z-index:10;position:relative;font-family:Inter,sans-serif;';
-                monzaaActions.innerHTML = '<a href="/" class="btn-monzaa-primary" style="background:#ffffff;color:#000000;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">Back to Home ↗</a><button onclick="if(window.openCmdKSearch) window.openCmdKSearch();" class="btn-monzaa-secondary" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#ffffff;padding:12px 22px;border-radius:30px;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;">Search (Cmd + K)</button><a href="https://calendly.com/sndp-design/30min" target="_blank" rel="noopener noreferrer" class="btn-monzaa-secondary" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#ffffff;padding:12px 22px;border-radius:30px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">Book a Call ↗</a>';
+                // Add 'Back to Home' purple button
+                var actions = document.createElement('div');
+                actions.id = 'monzaa-404-container';
+                actions.style.cssText = 'display:flex;justify-content:center;align-items:center;margin-top:32px;z-index:10;position:relative;font-family:Inter,sans-serif;';
+                actions.innerHTML = '<a href="/" class="btn-404-purple" style="background:#8629FF;color:#ffffff;padding:12px 28px;border-radius:12px;font-size:15px;font-weight:600;text-decoration:none;box-shadow:0 8px 25px rgba(134,41,255,0.4);">Back to Home</a>';
 
                 if (pContainer && pContainer.parentElement) {
-                    pContainer.parentElement.appendChild(monzaaActions);
+                    pContainer.parentElement.appendChild(actions);
                 } else {
-                    parent.parentElement.appendChild(monzaaActions);
+                    parent.parentElement.appendChild(actions);
                 }
             }
         }
