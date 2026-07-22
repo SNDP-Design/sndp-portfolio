@@ -4,7 +4,7 @@
     if (!document.getElementById('portfolio-monochrome-style')) {
         var style = document.createElement('style');
         style.id = 'portfolio-monochrome-style';
-        style.textContent = '.tldr-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; } @media (max-width: 768px) { .tldr-grid { grid-template-columns: 1fr !important; } } .hide-mobile { display: inline-block; } @media (max-width: 640px) { .hide-mobile { display: none !important; } } .sticky-call-btn { transition: transform 0.2s ease; } .sticky-call-btn:hover { transform: scale(1.05); } .sticky-copy-btn:hover { background: rgba(255,255,255,0.2) !important; }';
+        style.textContent = '.tldr-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; } @media (max-width: 768px) { .tldr-grid { grid-template-columns: 1fr !important; } } .hide-mobile { display: inline-block; } @media (max-width: 640px) { .hide-mobile { display: none !important; } } .sticky-call-btn { transition: transform 0.2s ease; } .sticky-call-btn:hover { transform: scale(1.05); } .sticky-copy-btn:hover { background: rgba(255,255,255,0.2) !important; } .btn-404 { transition: transform 0.2s ease, background 0.2s ease; } .btn-404:hover { transform: translateY(-2px); }';
         document.head.appendChild(style);
     }
 
@@ -52,6 +52,53 @@
         }
     });
 
+    // 404 Page Customizer (Preserving Top Navbar & Hero Canvas Hover)
+    function handle404Page() {
+        var is404 = window.location.pathname.includes('/404') || document.title.includes('404');
+        if (!is404) return;
+
+        var h1 = document.querySelector('h1');
+        if (h1 && !document.getElementById('404-actions')) {
+            h1.innerHTML = '404 — Page Not Found';
+            
+            // Update badge above title if present
+            var badge = h1.parentElement ? h1.parentElement.previousElementSibling : null;
+            if (badge && badge.innerText.includes('Sandeep')) {
+                badge.innerText = '⚠️ ERROR 404';
+            }
+
+            // Update subtitle paragraph
+            var container = h1.closest('.framer-16f7bbp') || h1.parentElement;
+            if (container) {
+                var p = container.nextElementSibling ? container.nextElementSibling.querySelector('p') : null;
+                if (p) {
+                    p.innerText = 'The page you are looking for might have been moved, renamed, or doesn&apos;t exist.';
+                }
+            }
+
+            // Create 404 Quick Actions container under H1
+            var actions = document.createElement('div');
+            actions.id = '404-actions';
+            actions.style.cssText = 'display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:28px;z-index:10;position:relative;font-family:Inter,sans-serif;';
+            actions.innerHTML = '<a href="/" class="btn-404" style="background:#ffffff;color:#000000;padding:12px 22px;border-radius:24px;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">🏠 Back Home</a><button onclick="if(window.openCmdKSearch) window.openCmdKSearch();" class="btn-404" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#ffffff;padding:12px 22px;border-radius:24px;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;">🔍 Search (Cmd + K)</button><a href="https://calendly.com/sndp-design/30min" target="_blank" rel="noopener noreferrer" class="btn-404" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#ffffff;padding:12px 22px;border-radius:24px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">📅 Book a Call ↗</a>';
+
+            if (container && container.parentElement) {
+                container.parentElement.appendChild(actions);
+            } else if (h1.parentElement) {
+                h1.parentElement.appendChild(actions);
+            }
+        }
+
+        // Hide main project section below hero on 404 page
+        var mainGrid = document.querySelector('#main') || document.querySelector('.framer-1a7t8vt');
+        if (mainGrid && is404) {
+            var cards = mainGrid.querySelectorAll('.framer-1qy3q1s, .framer-19z13m0');
+            cards.forEach(function(card) {
+                card.style.display = 'none';
+            });
+        }
+    }
+
     function injectKPIBadges() {
         if (window.location.pathname !== '/' && window.location.pathname !== '') return;
 
@@ -61,23 +108,25 @@
             var parent = h3.parentElement;
             if (!parent) return;
 
+            var chip_style = 'background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;';
+
             if (text === 'CliX' && !parent.querySelector('.kpi-clix')) {
                 var div = document.createElement('div');
                 div.className = 'kpi-badge-container kpi-clix';
                 div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:22px;padding-top:2px;padding-bottom:2px;';
-                div.innerHTML = '<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;">⚡ +45% Campaign Efficiency</span><span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;">B2B SaaS Engine</span>';
+                div.innerHTML = '<span style="' + chip_style + '">⚡ +45% Campaign Efficiency</span><span style="' + chip_style + '">B2B SaaS Engine</span>';
                 h3.after(div);
             } else if (text === 'FATCA-CRS' && !parent.querySelector('.kpi-fatca')) {
                 var div = document.createElement('div');
                 div.className = 'kpi-badge-container kpi-fatca';
                 div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:22px;padding-top:2px;padding-bottom:2px;';
-                div.innerHTML = '<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;">⚡ -65% Drop-off Rate</span><span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;">Fintech Compliance</span>';
+                div.innerHTML = '<span style="' + chip_style + '">⚡ -65% Drop-off Rate</span><span style="' + chip_style + '">Fintech Compliance</span>';
                 h3.after(div);
             } else if (text === 'Member Connect' && !parent.querySelector('.kpi-member')) {
                 var div = document.createElement('div');
                 div.className = 'kpi-badge-container kpi-member';
                 div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:22px;padding-top:2px;padding-bottom:2px;';
-                div.innerHTML = '<span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;">⚡ 50k+ Active SMEs</span><span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#ffffff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:0.3px;">Tide Platform</span>';
+                div.innerHTML = '<span style="' + chip_style + '">⚡ 50k+ Active SMEs</span><span style="' + chip_style + '">Tide Platform</span>';
                 h3.after(div);
             }
         });
@@ -125,6 +174,7 @@
     }
 
     function runAllEnhancements() {
+        handle404Page();
         injectKPIBadges();
         injectTLDRBoxes();
         injectStickyBar();
