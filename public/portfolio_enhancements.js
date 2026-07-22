@@ -89,21 +89,25 @@
         if (!h1 || !h1.parentElement) return;
 
         var container = h1.parentElement;
-        if (container.querySelector('.executive-tldr-box')) return;
+        if (container.querySelector('.executive-tldr-grid')) return;
 
-        var box = document.createElement('div');
-        box.className = 'executive-tldr-box';
-        box.style.cssText = 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:20px 24px;margin:28px auto 40px auto;width:100%;max-width:900px;backdrop-filter:blur(12px);font-family:Inter,sans-serif;box-sizing:border-box;text-align:left;';
+        var grid = document.createElement('div');
+        grid.className = 'executive-tldr-grid tldr-grid';
+        grid.style.cssText = 'width:100%;max-width:900px;margin:24px auto 12px auto;font-family:Inter,sans-serif;box-sizing:border-box;';
+
+        var cardStyle = 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);padding:18px 20px;border-radius:16px;box-sizing:border-box;backdrop-filter:blur(10px);';
+        var labelStyle = 'color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;';
+        var valStyle = 'color:#ffffff;font-size:14px;font-weight:600;';
 
         if (path.includes('/clix')) {
-            box.innerHTML = '<div class="tldr-grid"><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">My Role</div><div style="color:#ffffff;font-size:14px;font-weight:600;">Sole Product Designer</div></div><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">Scope & Platform</div><div style="color:#ffffff;font-size:14px;font-weight:600;">B2B Web App & Analytics</div></div><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">Key Metric Impact</div><div style="color:#ffffff;font-size:14px;font-weight:700;">+45% Setup Speed & Efficiency</div></div></div>';
-            h1.after(box);
+            grid.innerHTML = '<div style="' + cardStyle + '"><div style="' + labelStyle + '">My Role</div><div style="' + valStyle + '">Sole Product Designer</div></div><div style="' + cardStyle + '"><div style="' + labelStyle + '">Scope & Platform</div><div style="' + valStyle + '">B2B Web App & Analytics</div></div><div style="' + cardStyle + '"><div style="' + labelStyle + '">Key Metric Impact</div><div style="' + valStyle + '">+45% Setup Speed & Efficiency</div></div>';
+            h1.after(grid);
         } else if (path.includes('/fatca-crs')) {
-            box.innerHTML = '<div class="tldr-grid"><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">My Role</div><div style="color:#ffffff;font-size:14px;font-weight:600;">Sole Product Designer</div></div><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">Scope & Platform</div><div style="color:#ffffff;font-size:14px;font-weight:600;">iOS / Android Mobile App</div></div><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">Key Metric Impact</div><div style="color:#ffffff;font-size:14px;font-weight:700;">-65% Onboarding Drop-off</div></div></div>';
-            h1.after(box);
+            grid.innerHTML = '<div style="' + cardStyle + '"><div style="' + labelStyle + '">My Role</div><div style="' + valStyle + '">Sole Product Designer</div></div><div style="' + cardStyle + '"><div style="' + labelStyle + '">Scope & Platform</div><div style="' + valStyle + '">iOS / Android Mobile App</div></div><div style="' + cardStyle + '"><div style="' + labelStyle + '">Key Metric Impact</div><div style="' + valStyle + '">-65% Onboarding Drop-off</div></div>';
+            h1.after(grid);
         } else if (path.includes('/member-connect')) {
-            box.innerHTML = '<div class="tldr-grid"><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">My Role</div><div style="color:#ffffff;font-size:14px;font-weight:600;">Sole Product Designer</div></div><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">Scope & Platform</div><div style="color:#ffffff;font-size:14px;font-weight:600;">Mobile & Web Community</div></div><div style="background:rgba(0,0,0,0.4);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.08);"><div style="color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">Key Metric Impact</div><div style="color:#ffffff;font-size:14px;font-weight:700;">50k+ SME Network Onboarded</div></div></div>';
-            h1.after(box);
+            grid.innerHTML = '<div style="' + cardStyle + '"><div style="' + labelStyle + '">My Role</div><div style="' + valStyle + '">Sole Product Designer</div></div><div style="' + cardStyle + '"><div style="' + labelStyle + '">Scope & Platform</div><div style="' + valStyle + '">Mobile & Web Community</div></div><div style="' + cardStyle + '"><div style="' + labelStyle + '">Key Metric Impact</div><div style="' + valStyle + '">50k+ SME Network Onboarded</div></div>';
+            h1.after(grid);
         }
     }
 
