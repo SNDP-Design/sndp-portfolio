@@ -93,7 +93,7 @@
 
         var grid = document.createElement('div');
         grid.className = 'executive-tldr-grid tldr-grid';
-        grid.style.cssText = 'width:100%;max-width:900px;margin:24px auto 12px auto;font-family:Inter,sans-serif;box-sizing:border-box;';
+        grid.style.cssText = 'width:100%;max-width:900px;margin:48px auto 16px auto;font-family:Inter,sans-serif;box-sizing:border-box;';
 
         var cardStyle = 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);padding:18px 20px;border-radius:16px;box-sizing:border-box;backdrop-filter:blur(10px);';
         var labelStyle = 'color:#a0a0a0;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;';
