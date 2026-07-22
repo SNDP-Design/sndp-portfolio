@@ -235,6 +235,55 @@
     observer.observe(document.body, { childList: true, subtree: true });
   })();
 </script>
+
+<script>
+(function() {
+    // 1. Toast Notification & Email Copy
+    function showToast(msg) {
+        var existing = document.getElementById('sndp-toast');
+        if (existing) existing.remove();
+
+        var toast = document.createElement('div');
+        toast.id = 'sndp-toast';
+        toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#18181b;border:1px solid rgba(174,250,29,0.5);color:#ffffff;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;font-family:Inter,sans-serif;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,0.5),0 0 15px rgba(174,250,29,0.2);display:flex;align-items:center;gap:8px;animation:toastIn 0.3s cubic-bezier(0.16,1,0.3,1) forwards;';
+        toast.innerHTML = '<span style="color:#aefa1d;">✓</span> ' + msg;
+
+        if (!document.getElementById('toast-style')) {
+            var style = document.createElement('style');
+            style.id = 'toast-style';
+            style.textContent = '@keyframes toastIn { from { opacity:0; transform:translate(-50%, 20px); } to { opacity:1; transform:translate(-50%, 0); } }';
+            document.head.appendChild(style);
+        }
+
+        document.body.appendChild(toast);
+        setTimeout(function() {
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.3s ease';
+            setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
+        }, 2500);
+    }
+
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (link && (link.href.includes('mailto:hello@sndpdesign.uno') || link.innerText.includes('hello@sndpdesign.uno'))) {
+            e.preventDefault();
+            navigator.clipboard.writeText('hello@sndpdesign.uno').then(function() {
+                showToast('Official Email copied to clipboard!');
+            }).catch(function() {
+                window.location.href = 'mailto:hello@sndpdesign.uno';
+            });
+        }
+    });
+
+    window.copyPortfolioEmail = function() {
+        navigator.clipboard.writeText('hello@sndpdesign.uno').then(function() {
+            showToast('Official Email copied to clipboard!');
+        });
+    };
+})();
+</script>
+
+<script src="/cmd_k_search.js"></script>
 </body>
 
 </html>
