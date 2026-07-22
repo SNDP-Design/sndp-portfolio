@@ -64,19 +64,19 @@
             if (text === 'CliX' && !parent.querySelector('.kpi-clix')) {
                 var div = document.createElement('div');
                 div.className = 'kpi-badge-container kpi-clix';
-                div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;margin-bottom:10px;';
+                div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:22px;padding-top:2px;padding-bottom:2px;';
                 div.innerHTML = '<span style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#ffffff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;letter-spacing:0.3px;">⚡ +45% Campaign Efficiency</span><span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#cccccc;font-size:12px;font-weight:500;padding:4px 10px;border-radius:20px;">B2B SaaS Engine</span>';
                 h3.after(div);
             } else if (text === 'FATCA-CRS' && !parent.querySelector('.kpi-fatca')) {
                 var div = document.createElement('div');
                 div.className = 'kpi-badge-container kpi-fatca';
-                div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;margin-bottom:10px;';
+                div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:22px;padding-top:2px;padding-bottom:2px;';
                 div.innerHTML = '<span style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#ffffff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;letter-spacing:0.3px;">⚡ -65% Drop-off Rate</span><span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#cccccc;font-size:12px;font-weight:500;padding:4px 10px;border-radius:20px;">Fintech Compliance</span>';
                 h3.after(div);
             } else if (text === 'Member Connect' && !parent.querySelector('.kpi-member')) {
                 var div = document.createElement('div');
                 div.className = 'kpi-badge-container kpi-member';
-                div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;margin-bottom:10px;';
+                div.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:22px;padding-top:2px;padding-bottom:2px;';
                 div.innerHTML = '<span style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#ffffff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;letter-spacing:0.3px;">⚡ 50k+ Active SMEs</span><span style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:#cccccc;font-size:12px;font-weight:500;padding:4px 10px;border-radius:20px;">Tide Platform</span>';
                 h3.after(div);
             }
