@@ -52,47 +52,31 @@
         }
     });
 
-    // 404 Page Content & Design Match
     function handle404Page() {
         var is404 = window.location.pathname.includes('/404') || document.title.includes('404');
         if (!is404) return;
 
-        var h1 = document.querySelector('h1');
-        if (h1 && !document.getElementById('monzaa-404-container')) {
-            var parent = h1.closest('.framer-16f7bbp') || h1.parentElement;
+        if (document.getElementById('monzaa-404-hero')) {
+            var ex = document.getElementById('monzaa-404-hero');
+            ex.style.opacity = '1';
+            ex.style.display = 'flex';
+            return;
+        }
 
-            if (parent) {
-                // Update badge above title to match '● Error'
-                var badge = parent.previousElementSibling;
-                if (badge) {
-                    badge.innerHTML = '<span style="background:rgba(134,41,255,0.25);border:1px solid rgba(134,41,255,0.4);color:#ffffff;font-size:12px;font-weight:600;padding:5px 16px;border-radius:20px;display:inline-flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#ffffff;box-shadow:0 0 6px rgba(255,255,255,0.8);"></span> Error</span>';
-                }
+        var richTextContainers = document.querySelectorAll('.framer-16f7bbp, .framer-17a8gyu');
+        richTextContainers.forEach(function(el) { el.style.display = 'none'; });
 
-                // Update H1 title to match '404' + 'Sorry! Page not found'
-                h1.innerHTML = '<div style="font-size:110px;font-weight:800;letter-spacing:-3px;line-height:1;margin-bottom:12px;color:#8629FF;">404</div><div style="font-size:32px;font-weight:700;color:#ffffff;margin-top:12px;">Sorry! Page not found</div>';
+        var container = document.createElement('div');
+        container.id = 'monzaa-404-hero';
+        container.style.cssText = 'display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px 24px;width:100%;max-width:700px;margin:0 auto;z-index:999;position:relative;font-family:Inter,sans-serif;box-sizing:border-box;opacity:1 !important;visibility:visible !important;';
 
-                // Update subtitle
-                var pContainer = parent.nextElementSibling;
-                if (pContainer) {
-                    var p = pContainer.querySelector('p');
-                    if (p) {
-                        p.innerHTML = 'It looks like the page you&apos;re looking for doesn&apos;t exist or might have been moved. Don&apos;t worry, let&apos;s get you back on track!';
-                        p.style.cssText = 'color:#b0a0c8;font-size:16px;max-width:540px;margin:16px auto 0 auto;line-height:1.6;';
-                    }
-                }
+        container.innerHTML = '<div style="background:rgba(134,41,255,0.25);border:1px solid rgba(134,41,255,0.4);color:#ffffff;font-size:13px;font-weight:600;padding:5px 16px;border-radius:20px;display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;"><span style="width:7px;height:7px;border-radius:50%;background:#ffffff;box-shadow:0 0 8px rgba(255,255,255,0.9);"></span> Error</div><h1 style="font-size:120px;font-weight:800;letter-spacing:-4px;line-height:1;margin:0 0 12px 0;color:#8629FF;text-shadow:0 10px 30px rgba(134,41,255,0.3);">404</h1><h2 style="font-size:32px;font-weight:700;color:#ffffff;margin:0 0 16px 0;">Sorry! Page not found</h2><p style="color:#b0a0c8;font-size:16px;line-height:1.6;max-width:540px;margin:0 0 32px 0;">It looks like the page you&apos;re looking for doesn&apos;t exist or might have been moved. Don&apos;t worry, let&apos;s get you back on track!</p><a href="/" class="btn-404-purple" style="background:#8629FF;color:#ffffff;padding:14px 32px;border-radius:12px;font-size:15px;font-weight:600;text-decoration:none;box-shadow:0 8px 25px rgba(134,41,255,0.5);display:inline-block;">Back to Home</a>';
 
-                // Add 'Back to Home' purple button
-                var actions = document.createElement('div');
-                actions.id = 'monzaa-404-container';
-                actions.style.cssText = 'display:flex;justify-content:center;align-items:center;margin-top:32px;z-index:10;position:relative;font-family:Inter,sans-serif;';
-                actions.innerHTML = '<a href="/" class="btn-404-purple" style="background:#8629FF;color:#ffffff;padding:12px 28px;border-radius:12px;font-size:15px;font-weight:600;text-decoration:none;box-shadow:0 8px 25px rgba(134,41,255,0.4);">Back to Home</a>';
-
-                if (pContainer && pContainer.parentElement) {
-                    pContainer.parentElement.appendChild(actions);
-                } else {
-                    parent.parentElement.appendChild(actions);
-                }
-            }
+        var header = document.querySelector('header') || document.querySelector('#header');
+        if (header && header.nextElementSibling) {
+            header.after(container);
+        } else {
+            (document.querySelector('#main') || document.body).appendChild(container);
         }
     }
 
