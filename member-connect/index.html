@@ -32,10 +32,7 @@
             }
         }
         enforceFavicon();
-        if (typeof MutationObserver !== "undefined") {
-            new MutationObserver(enforceFavicon).observe(document.head || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
-        }
-    })();
+        enforceFavicon(); })();
     </script>
 
 
@@ -154,12 +151,7 @@
   </style>
 <script>
         document.title = "Member Connect Case Study \u2014 Tide B2B SME Network | Sandeep Rathi";
-        if (typeof MutationObserver !== undefined) {
-            new MutationObserver(function() {
-                if (document.title !== "Member Connect Case Study \u2014 Tide B2B SME Network | Sandeep Rathi") {
-                    document.title = "Member Connect Case Study \u2014 Tide B2B SME Network | Sandeep Rathi";
-                }
-            }).observe(document.querySelector(head) || document.documentElement, { childList: true, subtree: true });
+        
         }
         </script>
 </head>
@@ -200,90 +192,9 @@
     <!-- End of bodyEnd -->
 
 <!-- Dynamic GitHub Icon Hydration Observer -->
-<script>
-  (function() {
-    function injectGithub() {
-      const instaLinks = document.querySelectorAll('a[href*="instagram.com/sndp.rathi"]');
-      instaLinks.forEach(instaLink => {
-        const container = instaLink.parentElement;
-        if (container && !container.querySelector('a[href*="github.com"]')) {
-          const githubLink = document.createElement('a');
-          githubLink.className = instaLink.className;
-          githubLink.href = 'https://github.com/SNDP-Design';
-          githubLink.target = '_blank';
-          githubLink.rel = 'noopener';
-          if (instaLink.hasAttribute('data-framer-name')) {
-            githubLink.setAttribute('data-framer-name', 'GitHub');
-          }
-          githubLink.innerHTML = instaLink.innerHTML;
-          const svgContainer = githubLink.querySelector('.svgContainer');
-          if (svgContainer) {
-            svgContainer.innerHTML = '<svg style="width:100%;height:100%;" viewBox="0 0 20 20" fill="white"><g transform="translate(1, 1) scale(0.9)"><path d="M10 0a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 10 5.1c.85 0 1.7.11 2.5.34 1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0z"/></g></svg>';
-          }
-          const innerDiv = githubLink.querySelector('div[data-framer-name]');
-          if (innerDiv) {
-            innerDiv.setAttribute('data-framer-name', 'GitHub');
-          }
-          instaLink.after(githubLink);
-        }
-      });
-    }
-    
-    injectGithub();
-    const interval = setInterval(injectGithub, 300);
-    setTimeout(() => clearInterval(interval), 6000);
-    
-    const observer = new MutationObserver(injectGithub);
-    observer.observe(document.body, { childList: true, subtree: true });
-  })();
-</script>
 
-<script>
-(function() {
-    // 1. Toast Notification & Email Copy
-    function showToast(msg) {
-        var existing = document.getElementById('sndp-toast');
-        if (existing) existing.remove();
 
-        var toast = document.createElement('div');
-        toast.id = 'sndp-toast';
-        toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#18181b;border:1px solid rgba(255,255,255,0.5);color:#ffffff;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;font-family:Inter,sans-serif;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,0.5),0 0 15px rgba(255,255,255,0.2);display:flex;align-items:center;gap:8px;animation:toastIn 0.3s cubic-bezier(0.16,1,0.3,1) forwards;';
-        toast.innerHTML = '<span style="color:#ffffff;">✓</span> ' + msg;
 
-        if (!document.getElementById('toast-style')) {
-            var style = document.createElement('style');
-            style.id = 'toast-style';
-            style.textContent = '@keyframes toastIn { from { opacity:0; transform:translate(-50%, 20px); } to { opacity:1; transform:translate(-50%, 0); } }';
-            document.head.appendChild(style);
-        }
-
-        document.body.appendChild(toast);
-        setTimeout(function() {
-            toast.style.opacity = '0';
-            toast.style.transition = 'opacity 0.3s ease';
-            setTimeout(function() { if (toast.parentNode) toast.remove(); }, 300);
-        }, 2500);
-    }
-
-    document.addEventListener('click', function(e) {
-        var link = e.target.closest('a');
-        if (link && (link.href.includes('mailto:hello@sndpdesign.uno') || link.innerText.includes('hello@sndpdesign.uno'))) {
-            e.preventDefault();
-            navigator.clipboard.writeText('hello@sndpdesign.uno').then(function() {
-                showToast('Official Email copied to clipboard!');
-            }).catch(function() {
-                window.location.href = 'mailto:hello@sndpdesign.uno';
-            });
-        }
-    });
-
-    window.copyPortfolioEmail = function() {
-        navigator.clipboard.writeText('hello@sndpdesign.uno').then(function() {
-            showToast('Official Email copied to clipboard!');
-        });
-    };
-})();
-</script>
 
 
 <div id="sticky-cta-bar" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(18,18,20,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.12);padding:10px 20px;border-radius:40px;z-index:9990;display:flex;align-items:center;gap:16px;box-shadow:0 20px 40px rgba(0,0,0,0.6);max-width:90vw;font-family:Inter,sans-serif;">
