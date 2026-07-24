@@ -130,25 +130,50 @@
         document.body.appendChild(bar);
     }
 
-    function runAllEnhancements() {
-        
-        injectKPIBadges();
-        injectTLDRBoxes();
-        injectStickyBar();
+    var isUpdating = false;
+    function safeRunAllEnhancements() {
+        if (isUpdating) return;
+        isUpdating = true;
+        try {
+            injectKPIBadges();
+            injectTLDRBoxes();
+            injectStickyBar();
+        } catch (e) {}
+        setTimeout(function() { isUpdating = false; }, 200);
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runAllEnhancements);
+        document.addEventListener('DOMContentLoaded', safeRunAllEnhancements);
     } else {
-        runAllEnhancements();
+        safeRunAllEnhancements();
     }
 
-    setTimeout(runAllEnhancements, 400);
-    setTimeout(runAllEnhancements, 1200);
+    setTimeout(safeRunAllEnhancements, 400);
+    setTimeout(safeRunAllEnhancements, 1200);
 
     if (typeof MutationObserver !== 'undefined') {
-        var observer = new MutationObserver(function() {
-            runAllEnhancements();
+        var observer = new MutationObserver(function(mutations) {
+            if (isUpdating) return;
+            var shouldRun = false;
+            for (var i = 0; i < mutations.length; i++) {
+                var m = mutations[i];
+                if (m.addedNodes) {
+                    for (var j = 0; j < m.addedNodes.length; j++) {
+                        var node = m.addedNodes[j];
+                        if (node.nodeType === 1) {
+                            var isEnhancementNode = (node.classList && (node.classList.contains('kpi-badge-container') || node.classList.contains('executive-tldr-grid'))) || node.id === 'sticky-cta-bar' || node.id === 'sndp-toast';
+                            if (!isEnhancementNode) {
+                                shouldRun = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (shouldRun) break;
+            }
+            if (shouldRun) {
+                safeRunAllEnhancements();
+            }
         });
         observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
     }
