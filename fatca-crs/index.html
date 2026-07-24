@@ -12,28 +12,7 @@
     <link rel="icon" href="https://www.sndpdesign.uno/favicon.png?v=2" type="image/png">
     <link rel="shortcut icon" href="https://www.sndpdesign.uno/favicon.png?v=2" type="image/png">
     <link rel="apple-touch-icon" href="https://www.sndpdesign.uno/apple-touch-icon.png?v=2">
-    <script>
-    (function() {
-        function enforceFavicon() {
-            var favUrl = "https://www.sndpdesign.uno/favicon.png?v=2";
-            var links = document.querySelectorAll("link[rel*='icon']");
-            if (links.length === 0) {
-                var l = document.createElement("link");
-                l.rel = "icon";
-                l.type = "image/png";
-                l.href = favUrl;
-                (document.head || document.documentElement).appendChild(l);
-            } else {
-                links.forEach(function(l) {
-                    if (l.getAttribute("href") !== favUrl) {
-                        l.setAttribute("href", favUrl);
-                    }
-                });
-            }
-        }
-        enforceFavicon();
-        enforceFavicon(); })();
-    </script>
+    
 
 
     
@@ -149,11 +128,7 @@
       transform: scale(1.18) !important;
     }
   </style>
-<script>
-        document.title = "FATCA-CRS Case Study \u2014 Tide Fintech App UX | Sandeep Rathi";
-        
-        }
-        </script>
+
 </head>
 
 <body>
