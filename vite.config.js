@@ -3,6 +3,10 @@ import { resolve } from 'path';
 
 export default defineConfig({
   build: {
+    minify: 'esbuild',
+    target: 'esnext',
+    cssMinify: true,
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
@@ -15,3 +19,4 @@ export default defineConfig({
     }
   }
 });
+
