@@ -126,25 +126,78 @@
         document.body.appendChild(bar);
     }
 
-    function runAllEnhancements() {
-        
-        injectKPIBadges();
-        injectTLDRBoxes();
-        injectStickyBar();
+    function injectGithub() {
+        var instaLinks = document.querySelectorAll('a[href*="instagram.com/sndp.rathi"]');
+        instaLinks.forEach(function(instaLink) {
+            var container = instaLink.parentElement;
+            if (container && !container.querySelector('a[href*="github.com"]')) {
+                var githubLink = document.createElement('a');
+                githubLink.className = instaLink.className;
+                githubLink.href = 'https://github.com/SNDP-Design';
+                githubLink.target = '_blank';
+                githubLink.rel = 'noopener noreferrer';
+                if (instaLink.hasAttribute('data-framer-name')) {
+                    githubLink.setAttribute('data-framer-name', 'GitHub');
+                }
+                githubLink.innerHTML = instaLink.innerHTML;
+                var svgContainer = githubLink.querySelector('.svgContainer') || githubLink.querySelector('svg')?.parentElement;
+                if (svgContainer) {
+                    svgContainer.innerHTML = '<svg style="width:100%;height:100%;" viewBox="0 0 20 20" fill="white"><g transform="translate(1, 1) scale(0.9)"><path d="M10 0a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 10 5.1c.85 0 1.7.11 2.5.34 1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0z"/></g></svg>';
+                }
+                var innerDiv = githubLink.querySelector('div[data-framer-name]');
+                if (innerDiv) {
+                    innerDiv.setAttribute('data-framer-name', 'GitHub');
+                }
+                instaLink.after(githubLink);
+            }
+        });
+    }
+
+    var isUpdating = false;
+    function safeRunAllEnhancements() {
+        if (isUpdating) return;
+        isUpdating = true;
+        try {
+            injectGithub();
+            injectKPIBadges();
+            injectTLDRBoxes();
+            injectStickyBar();
+        } catch (e) {}
+        setTimeout(function() { isUpdating = false; }, 200);
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runAllEnhancements);
+        document.addEventListener('DOMContentLoaded', safeRunAllEnhancements);
     } else {
-        runAllEnhancements();
+        safeRunAllEnhancements();
     }
 
-    setTimeout(runAllEnhancements, 400);
-    setTimeout(runAllEnhancements, 1200);
+    setTimeout(safeRunAllEnhancements, 400);
+    setTimeout(safeRunAllEnhancements, 1200);
 
     if (typeof MutationObserver !== 'undefined') {
-        var observer = new MutationObserver(function() {
-            runAllEnhancements();
+        var observer = new MutationObserver(function(mutations) {
+            if (isUpdating) return;
+            var shouldRun = false;
+            for (var i = 0; i < mutations.length; i++) {
+                var m = mutations[i];
+                if (m.addedNodes) {
+                    for (var j = 0; j < m.addedNodes.length; j++) {
+                        var node = m.addedNodes[j];
+                        if (node.nodeType === 1) {
+                            var isEnhancementNode = (node.classList && (node.classList.contains('kpi-badge-container') || node.classList.contains('executive-tldr-grid'))) || node.id === 'sticky-cta-bar' || node.id === 'sndp-toast';
+                            if (!isEnhancementNode) {
+                                shouldRun = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (shouldRun) break;
+            }
+            if (shouldRun) {
+                safeRunAllEnhancements();
+            }
         });
         observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
     }
