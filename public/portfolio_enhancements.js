@@ -115,8 +115,15 @@
 
     function injectStickyBar() {
         var path = window.location.pathname;
-        if (!path.includes('/clix') && !path.includes('/fatca-crs') && !path.includes('/member-connect')) return;
-        if (document.getElementById('sticky-cta-bar')) return;
+        var isCaseStudy = path.includes('/clix') || path.includes('/fatca-crs') || path.includes('/member-connect');
+        var existingBar = document.getElementById('sticky-cta-bar');
+
+        if (!isCaseStudy) {
+            if (existingBar) existingBar.remove();
+            return;
+        }
+
+        if (existingBar) return;
 
         var bar = document.createElement('div');
         bar.id = 'sticky-cta-bar';
