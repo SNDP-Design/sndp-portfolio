@@ -121,11 +121,11 @@
 
   <!-- Custom GitHub Hover Interaction Style -->
   <style>
-    a[href*="github.com"] {
+    a[href*="github.com"]:not(.context-footer-nav-link):not(.context-footer-social-link) {
       transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.15) !important;
       display: inline-block !important;
     }
-    a[href*="github.com"]:hover {
+    a[href*="github.com"]:not(.context-footer-nav-link):not(.context-footer-social-link):hover {
       transform: scale(1.18) !important;
     }
   </style>
