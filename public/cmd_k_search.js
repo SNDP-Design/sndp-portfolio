@@ -27,7 +27,7 @@
                     '<span style="color:#ffffff;font-weight:600;font-size:13px;">Jump ↗</span>' +
                 '</a>' +
                 '<a href="/about" class="cmdk-item" style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:12px;text-decoration:none;color:#ffffff;transition:background 0.2s;margin-bottom:4px;">' +
-                    '<div><div style="font-weight:600;font-size:14px;">About Sandeep Rathi</div><div style="color:#808080;font-size:12px;margin-top:2px;">7+ Years of B2B SaaS & Fintech UX Leadership</div></div>' +
+                    '<div><div style="font-weight:600;font-size:14px;">About Sandeep Rathi</div><div style="color:#808080;font-size:12px;margin-top:2px;">8+ Years of B2B SaaS & Fintech UX Leadership</div></div>' +
                     '<span style="color:#ffffff;font-weight:600;font-size:13px;">Jump ↗</span>' +
                 '</a>' +
                 '<div style="color:#808080;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:16px 8px 12px 8px;">Actions</div>' +
