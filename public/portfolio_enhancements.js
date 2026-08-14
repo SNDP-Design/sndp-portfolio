@@ -209,14 +209,13 @@
 
     <!-- Navigation Columns Grid: 3 Clean Spaced Columns -->
     <div class="context-footer-grid">
-      <!-- Col 1: Selected Works -->
+      <!-- Col 1: Case Studies -->
       <div class="context-footer-col">
-        <p class="context-footer-col-title">Works</p>
+        <p class="context-footer-col-title">Case Studies</p>
         <ul class="context-footer-nav-list">
           <li><a href="/clix" class="context-footer-nav-link">CliX — Campaign Engine</a></li>
           <li><a href="/fatca-crs" class="context-footer-nav-link">FATCA-CRS Flow</a></li>
           <li><a href="/member-connect" class="context-footer-nav-link">Member Connect</a></li>
-          <li><a href="/#b2b-saas" class="context-footer-nav-link">Design Systems</a></li>
         </ul>
       </div>
 
