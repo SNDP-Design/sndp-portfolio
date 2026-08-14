@@ -57,36 +57,26 @@ div[data-framer-name="Rights Reserved"] {
 
 @media (min-width: 768px) {
   .context-footer-container {
-    padding: 7rem 2.5rem 5rem 2.5rem;
+    padding: 6.5rem 2.5rem 4.5rem 2.5rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Top Row: Brand + Minimalist Radar Badge
+   Top Row: Brand Logo + Minimalist Radar Badge
    -------------------------------------------------------------------------- */
 .context-footer-top {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  padding-bottom: 4rem;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
-  border-image: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.2) 4px, transparent 4px, transparent 10px) 1;
-}
-
-@media (min-width: 768px) {
-  .context-footer-top {
-    grid-template-columns: 1fr auto;
-    column-gap: 4rem;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3.5rem;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-image: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0.15) 4px, transparent 4px, transparent 10px) 1;
 }
 
 /* Brand left */
 .context-footer-brand {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
+  align-items: center;
   min-width: 0;
 }
 
@@ -106,82 +96,24 @@ div[data-framer-name="Rights Reserved"] {
   color: #ffffff;
 }
 
-.context-footer-tagline {
-  max-width: 440px;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: -0.01em;
-  margin: 0;
-}
-
-/* Minimalist borderless social icons */
-.context-footer-socials {
-  display: flex;
-  align-items: center;
-  gap: 1.375rem;
-  margin-top: 0.5rem;
-}
-
-.context-footer-social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.45);
-  transition: all 180ms ease;
-  text-decoration: none;
-  cursor: pointer;
-  padding: 4px;
-}
-
-.context-footer-social-link:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.context-footer-social-link svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-}
-
 /* Right Status Area */
 .context-footer-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .context-footer-right {
-    align-items: flex-end;
-    justify-content: center;
-  }
 }
 
 /* Radar Certified Badge */
 .context-radar-badge-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
+  display: inline-flex;
   text-decoration: none;
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .context-radar-badge-wrapper {
-    align-items: flex-end;
-  }
-}
-
 .context-radar-badge {
   position: relative;
-  width: 4.75rem;
-  height: 4.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -292,56 +224,6 @@ div[data-framer-name="Rights Reserved"] {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.context-radar-status {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: -0.01em;
-  transition: color 150ms ease;
-  margin: 0;
-}
-
-.context-radar-badge-wrapper:hover .context-radar-status {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.context-ping-dot {
-  position: relative;
-  display: flex;
-  width: 7px;
-  height: 7px;
-}
-
-.context-ping-ring {
-  position: absolute;
-  display: inline-flex;
-  height: 100%;
-  width: 100%;
-  border-radius: 9999px;
-  background: #34d399;
-  opacity: 0.75;
-  animation: contextPing 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.context-ping-core {
-  position: relative;
-  display: inline-flex;
-  height: 7px;
-  width: 7px;
-  border-radius: 9999px;
-  background: #10b981;
-}
-
-@keyframes contextPing {
-  75%, 100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
-}
-
 /* --------------------------------------------------------------------------
    Navigation Links Grid: 3 Clean, Generously Spaced Columns
    -------------------------------------------------------------------------- */
@@ -349,7 +231,7 @@ div[data-framer-name="Rights Reserved"] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem 2rem;
-  padding-top: 1rem;
+  padding-top: 3.5rem;
 }
 
 @media (min-width: 768px) {
