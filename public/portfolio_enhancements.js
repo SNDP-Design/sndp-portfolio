@@ -8,6 +8,15 @@
         document.head.appendChild(style);
     }
 
+    // Ensure context_footer.css is loaded
+    if (!document.getElementById('context-footer-css')) {
+        var cssLink = document.createElement('link');
+        cssLink.id = 'context-footer-css';
+        cssLink.rel = 'stylesheet';
+        cssLink.href = '/context_footer.css';
+        document.head.appendChild(cssLink);
+    }
+
     function showToast(msg) {
         var existing = document.getElementById('sndp-toast');
         if (existing) existing.remove();
@@ -160,17 +169,258 @@
         });
     }
 
+    var CONTEXT_FOOTER_HTML = `
+  <div class="context-footer-container">
+    <!-- Top Row: Brand & Interactive Radar Status -->
+    <div class="context-footer-top">
+      <div class="context-footer-brand">
+        <a href="/" class="context-footer-logo" title="SNDP Design">
+          <span class="context-footer-logo-text">sndp.</span>
+          <span class="context-footer-logo-tag">⚡ Senior Product Designer</span>
+        </a>
+        <p class="context-footer-tagline">
+          Building founders' vision, from idea to MVP. Crafting high-conversion digital experiences, scalable design systems & intelligent workflows.
+        </p>
+        <div class="context-footer-socials">
+          <!-- Email with Copy Toast Trigger -->
+          <a href="mailto:hello@sndpdesign.uno" onclick="window.copyPortfolioEmail && window.copyPortfolioEmail(); return false;" aria-label="Email Sandeep" class="context-footer-social-link" title="Copy Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 6L8.91302 9.91697C11.4616 11.361 12.5384 11.361 15.087 9.91697L22 6"></path>
+              <path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z"></path>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/sndpdesign/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="context-footer-social-link" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <!-- X / Twitter -->
+          <a href="https://x.com/sndprathi" target="_blank" rel="noopener noreferrer" aria-label="X Profile" class="context-footer-social-link" title="X / Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/SNDP-Design" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="context-footer-social-link" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/sndp.rathi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="context-footer-social-link" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Rotating Radar Badge & Live Status Pill -->
+      <div class="context-footer-right">
+        <a href="https://calendly.com/sndp-design/30min" target="_blank" rel="noopener noreferrer" class="context-radar-badge-wrapper" title="Book a 30-min strategy call">
+          <div class="context-radar-badge">
+            <div class="context-radar-spinner"></div>
+            <div class="context-radar-border"></div>
+            <div class="context-radar-core">
+              <div class="context-radar-glow-top"></div>
+              <div class="context-radar-scanlines"></div>
+              <div class="context-radar-glow-bottom"></div>
+              <div class="context-radar-content">
+                <span class="context-radar-label-top">Certified</span>
+                <span class="context-radar-title">UX/UI</span>
+                <div class="context-radar-sub">
+                  <span class="context-radar-sub-line"></span>
+                  <span class="context-radar-sub-text">8+ Yrs</span>
+                  <span class="context-radar-sub-line reverse"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="context-radar-status">
+            <span class="context-ping-dot">
+              <span class="context-ping-ring"></span>
+              <span class="context-ping-core"></span>
+            </span>
+            Open for Select Projects
+          </p>
+        </a>
+
+        <a href="https://calendly.com/sndp-design/30min" target="_blank" rel="noopener noreferrer" class="context-status-pill">
+          <span class="context-ping-dot">
+            <span class="context-ping-ring" style="background:#38bdf8;"></span>
+            <span class="context-ping-core" style="background:#0284c7;"></span>
+          </span>
+          Based in India · Working Worldwide
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Columns Grid -->
+    <div class="context-footer-grid">
+      <!-- Col 1: Featured Works -->
+      <div class="context-footer-col">
+        <p class="context-footer-col-title">Featured Works</p>
+        <ul class="context-footer-nav-list">
+          <li><a href="/clix" class="context-footer-nav-link">CliX — B2B Engine <span class="badge-new">Case Study</span></a></li>
+          <li><a href="/fatca-crs" class="context-footer-nav-link">FATCA-CRS Flow <span class="badge-new">Fintech</span></a></li>
+          <li><a href="/member-connect" class="context-footer-nav-link">Member Connect</a></li>
+          <li><a href="/#website" class="context-footer-nav-link">Websites & SaaS</a></li>
+          <li><a href="/#mobile-app" class="context-footer-nav-link">Mobile Applications</a></li>
+          <li><a href="/#b2b-saas" class="context-footer-nav-link">Design Systems</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="context-footer-col">
+        <p class="context-footer-col-title">Navigation</p>
+        <ul class="context-footer-nav-list">
+          <li><a href="/" class="context-footer-nav-link">Home</a></li>
+          <li><a href="/about" class="context-footer-nav-link">About Me</a></li>
+          <li><a href="/contact" class="context-footer-nav-link">Contact</a></li>
+          <li><a href="https://calendly.com/sndp-design/30min" target="_blank" rel="noopener noreferrer" class="context-footer-nav-link">Book a 30-min Call ↗</a></li>
+          <li><a href="https://drive.google.com/file/d/18GOFmYdjRyapVHBDZVk2HLvi_w066nJ8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="context-footer-nav-link">Download Resume ↗</a></li>
+          <li><a href="/#faqs" class="context-footer-nav-link">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Capabilities -->
+      <div class="context-footer-col">
+        <p class="context-footer-col-title">Expertise</p>
+        <ul class="context-footer-nav-list">
+          <li><span class="context-footer-nav-link" style="cursor:default;">Product Strategy & MVP</span></li>
+          <li><span class="context-footer-nav-link" style="cursor:default;">UI/UX Architecture</span></li>
+          <li><span class="context-footer-nav-link" style="cursor:default;">Design Systems (Figma)</span></li>
+          <li><span class="context-footer-nav-link" style="cursor:default;">Interactive Prototyping</span></li>
+          <li><span class="context-footer-nav-link" style="cursor:default;">Frontend Engineering</span></li>
+          <li><span class="context-footer-nav-link" style="cursor:default;">AI-Accelerated Design</span></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Connect & Links -->
+      <div class="context-footer-col">
+        <p class="context-footer-col-title">Connect</p>
+        <ul class="context-footer-nav-list">
+          <li><a href="https://www.linkedin.com/in/sndpdesign/" target="_blank" rel="noopener noreferrer" class="context-footer-nav-link">LinkedIn Profile ↗</a></li>
+          <li><a href="https://github.com/SNDP-Design" target="_blank" rel="noopener noreferrer" class="context-footer-nav-link">GitHub Repository ↗</a></li>
+          <li><a href="https://x.com/sndprathi" target="_blank" rel="noopener noreferrer" class="context-footer-nav-link">X (formerly Twitter) ↗</a></li>
+          <li><a href="https://www.instagram.com/sndp.rathi/" target="_blank" rel="noopener noreferrer" class="context-footer-nav-link">Instagram ↗</a></li>
+          <li><a href="mailto:hello@sndpdesign.uno" onclick="window.copyPortfolioEmail && window.copyPortfolioEmail(); return false;" class="context-footer-nav-link">hello@sndpdesign.uno</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle Bar with 4 Corner Anchor Dots & Dashed Border -->
+  <div class="context-footer-middle">
+    <div class="context-footer-middle-container">
+      <!-- 4 Corner Anchors -->
+      <div class="context-corner-dot tl"></div>
+      <div class="context-corner-dot tr"></div>
+      <div class="context-corner-dot bl"></div>
+      <div class="context-corner-dot br"></div>
+
+      <!-- Copyright -->
+      <span class="context-footer-copyright">© 2026 SNDP Design. All rights reserved.</span>
+
+      <!-- Built with Heart in India -->
+      <span class="context-footer-builtwith">
+        Crafted with
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#268BFF" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+        </svg>
+        in India
+      </span>
+
+      <!-- Middle Links -->
+      <div class="context-footer-middle-links">
+        <a href="/about" class="context-footer-middle-link">About</a>
+        <a href="/contact" class="context-footer-middle-link">Contact</a>
+        <a href="javascript:window.scrollTo({top:0,behavior:'smooth'})" class="context-footer-middle-link">Back to Top ↑</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giant Responsive Watermark with Context.dev Outline Stroke + Solid Fill + Blue Pointer Cursor -->
+  <div class="context-footer-watermark">
+    <svg aria-hidden="true" viewBox="0 0 140 24" preserveAspectRatio="xMidYMid meet" class="context-footer-watermark-svg">
+      <text x="70" y="22" text-anchor="middle" font-size="23" fill="white" style="font-family:'Plus Jakarta Sans', Inter, -apple-system, sans-serif;font-weight:800">
+        <tspan fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.98)" stroke-width="0.9" stroke-dasharray="16 12" vector-effect="non-scaling-stroke">sndp.</tspan><tspan fill="#FFFFFF">design</tspan>
+      </text>
+      <!-- Signature Context.dev Electric Blue Vector Cursor Icon -->
+      <svg width="8" height="8" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="109" y="6">
+        <g filter="url(#footer-cursor-shadow)">
+          <path d="M36.16 32.93C32.65 32.44 30.21 36.34 32.19 39.27L48.13 62.93C50.03 65.75 54.34 65.16 55.41 61.93L58.87 51.53L66.7 43.85C69.13 41.47 67.77 37.34 64.4 36.87L36.16 32.93Z" fill="#268BFF"></path>
+          <path d="M31.36 39.83C28.901 36.18 31.93 31.33 36.29 31.939L64.54 35.88C68.73 36.47 70.42 41.6 67.4 44.57L59.75 52.07L56.36 62.25C55.02 66.26 49.66 66.99 47.3 63.49L31.36 39.83Z" stroke="#0D0D0F" stroke-width="2"></path>
+        </g>
+        <defs>
+          <filter id="footer-cursor-shadow" x="25.4788" y="30.8857" width="48.4595" height="43.8496" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+            <feOffset dy="4"></feOffset>
+            <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+            <feComposite in2="hardAlpha" operator="out"></feComposite>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2082_117351"></feBlend>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2082_117351" result="shape"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+    </svg>
+  </div>
+    `;
+
+    function injectContextFooter() {
+        // Hide any legacy Framer footer or legacy bottom elements
+        var legacyFooters = document.querySelectorAll('footer.framer-49zou5, footer[data-framer-name="footer"]:not(.context-footer), .framer-110s66v, .framer-1l9zl6p, div[data-framer-name="Rights Reserved"]');
+        legacyFooters.forEach(function(el) {
+            el.style.setProperty('display', 'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('height', '0px', 'important');
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('overflow', 'hidden', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+        });
+
+        var main = document.querySelector('main') || document.getElementById('main') || document.body;
+        var existingContextFooter = document.querySelector('footer.context-footer');
+
+        if (!existingContextFooter) {
+            var footer = document.createElement('footer');
+            footer.className = 'context-footer';
+            footer.innerHTML = CONTEXT_FOOTER_HTML;
+            if (main) {
+                main.appendChild(footer);
+            } else {
+                document.body.appendChild(footer);
+            }
+        } else {
+            if (!existingContextFooter.querySelector('.context-footer-container')) {
+                existingContextFooter.innerHTML = CONTEXT_FOOTER_HTML;
+            }
+            if (main && existingContextFooter.parentElement !== main) {
+                main.appendChild(existingContextFooter);
+            }
+        }
+    }
+
     var isUpdating = false;
     function safeRunAllEnhancements() {
         if (isUpdating) return;
         isUpdating = true;
         try {
+            injectContextFooter();
             injectGithub();
             injectKPIBadges();
             injectTLDRBoxes();
             injectStickyBar();
         } catch (e) {}
-        setTimeout(function() { isUpdating = false; }, 200);
+        setTimeout(function() { isUpdating = false; }, 150);
     }
 
     if (document.readyState === 'loading') {
@@ -179,8 +429,10 @@
         safeRunAllEnhancements();
     }
 
-    setTimeout(safeRunAllEnhancements, 400);
+    setTimeout(safeRunAllEnhancements, 200);
+    setTimeout(safeRunAllEnhancements, 600);
     setTimeout(safeRunAllEnhancements, 1200);
+    setTimeout(safeRunAllEnhancements, 2500);
 
     if (typeof MutationObserver !== 'undefined') {
         var observer = new MutationObserver(function(mutations) {
@@ -192,7 +444,7 @@
                     for (var j = 0; j < m.addedNodes.length; j++) {
                         var node = m.addedNodes[j];
                         if (node.nodeType === 1) {
-                            var isEnhancementNode = (node.classList && (node.classList.contains('kpi-badge-container') || node.classList.contains('executive-tldr-grid'))) || node.id === 'sticky-cta-bar' || node.id === 'sndp-toast';
+                            var isEnhancementNode = (node.classList && (node.classList.contains('kpi-badge-container') || node.classList.contains('executive-tldr-grid') || node.classList.contains('context-footer'))) || node.id === 'sticky-cta-bar' || node.id === 'sndp-toast';
                             if (!isEnhancementNode) {
                                 shouldRun = true;
                                 break;

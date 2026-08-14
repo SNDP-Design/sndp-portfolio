@@ -1,0 +1,624 @@
+/* ==========================================================================
+   CONTEXT.DEV INSPIRED FOOTER DESIGN SYSTEM FOR SNDP PORTFOLIO
+   ========================================================================== */
+
+/* Hide legacy Framer footer elements on all pages */
+footer.framer-49zou5:not(.context-footer),
+footer[data-framer-name="footer"]:not(.context-footer),
+div.framer-110s66v,
+div.framer-1l9zl6p,
+div[data-framer-name="Rights Reserved"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.context-footer {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 99 !important;
+  width: 100% !important;
+  isolation: isolate;
+  background-color: #0d0d0f !important;
+  color: #ffffff;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --footer-watermark-height: clamp(7.5rem, 20vw, 22rem);
+  box-sizing: border-box;
+}
+
+.context-footer *,
+.context-footer *::before,
+.context-footer *::after {
+  box-sizing: border-box;
+}
+
+.context-footer-container {
+  position: relative;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1100px;
+  padding: 3.5rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .context-footer-container {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .context-footer-container {
+    padding: 5rem 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Top header row inside footer
+   -------------------------------------------------------------------------- */
+.context-footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-image: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0.3) 4px, transparent 4px, transparent 8px) 1;
+}
+
+@media (min-width: 768px) {
+  .context-footer-top {
+    grid-template-columns: 1fr auto;
+    column-gap: 2.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Brand left section
+   -------------------------------------------------------------------------- */
+.context-footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.context-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.context-footer-logo-text {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.context-footer-logo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+}
+
+.context-footer-tagline {
+  max-width: 460px;
+  font-size: 0.9375rem;
+  font-weight: 450;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.context-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.context-footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.65);
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.context-footer-social-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.context-footer-social-link svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Right status & interactive badge
+   -------------------------------------------------------------------------- */
+.context-footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .context-footer-right {
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+/* Radar Certified Badge */
+.context-radar-badge-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .context-radar-badge-wrapper {
+    align-items: flex-end;
+  }
+}
+
+.context-radar-badge {
+  position: relative;
+  width: 4.6875rem;
+  height: 4.6875rem;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.context-radar-badge-wrapper:hover .context-radar-badge {
+  transform: scale(1.05);
+}
+
+.context-radar-spinner {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(38, 139, 255, 0.95) 60deg, transparent 140deg, rgba(38, 139, 255, 0.5) 220deg, transparent 300deg);
+  animation: contextSpin 12s linear infinite;
+}
+
+@keyframes contextSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.context-radar-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 0.625px dashed rgba(255, 255, 255, 0.35);
+}
+
+.context-radar-core {
+  position: absolute;
+  inset: 1.5625px;
+  border-radius: 9999px;
+  background: #0d0d0f;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.context-radar-glow-top {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% -10%, rgba(38, 139, 255, 0.5), transparent 60%);
+}
+
+.context-radar-scanlines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.6) 0, rgba(255, 255, 255, 0.6) 1.25px, transparent 1.25px, transparent 3.125px);
+}
+
+.context-radar-glow-bottom {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, rgba(0, 0, 0, 0.8), transparent 55%);
+}
+
+.context-radar-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+}
+
+.context-radar-label-top {
+  font-size: 5.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.context-radar-title {
+  margin-top: 1.5px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.context-radar-sub {
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.context-radar-sub-line {
+  height: 1px;
+  width: 7.5px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4));
+}
+
+.context-radar-sub-line.reverse {
+  background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.4));
+}
+
+.context-radar-sub-text {
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Radar substatus text */
+.context-radar-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: -0.01em;
+  transition: color 150ms ease;
+  margin: 0;
+}
+
+.context-radar-badge-wrapper:hover .context-radar-status {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.context-ping-dot {
+  position: relative;
+  display: flex;
+  width: 7px;
+  height: 7px;
+}
+
+.context-ping-ring {
+  position: absolute;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 9999px;
+  background: #34d399;
+  opacity: 0.75;
+  animation: contextPing 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.context-ping-core {
+  position: relative;
+  display: inline-flex;
+  height: 7px;
+  width: 7px;
+  border-radius: 9999px;
+  background: #10b981;
+}
+
+@keyframes contextPing {
+  75%, 100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* System status pill */
+.context-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+.context-status-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   Navigation Links Grid
+   -------------------------------------------------------------------------- */
+.context-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .context-footer-grid {
+    gap: 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .context-footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.context-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.context-footer-col-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.context-footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.context-footer-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 150ms ease, transform 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  line-height: 1.4;
+}
+
+.context-footer-nav-link:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.context-footer-nav-link .badge-new {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  background: rgba(38, 139, 255, 0.2);
+  border: 1px solid rgba(38, 139, 255, 0.4);
+  color: #268BFF;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   MIDDLE BAR WITH 4 CORNER ANCHOR DOTS & DASHED BORDER
+   -------------------------------------------------------------------------- */
+.context-footer-middle {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-image: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0.3) 4px, transparent 4px, transparent 8px) 1;
+}
+
+.context-footer-middle-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1.25rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .context-footer-middle-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .context-footer-middle-container {
+    display: grid;
+    height: 56px;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: left;
+  }
+}
+
+/* 4 Corner Anchors */
+.context-corner-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 1px rgba(51, 51, 51, 0.6);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .context-corner-dot {
+    display: block;
+  }
+}
+
+.context-corner-dot.tl {
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+.context-corner-dot.tr {
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+.context-corner-dot.bl {
+  left: 0;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+.context-corner-dot.br {
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+}
+
+.context-footer-copyright {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: -0.01em;
+}
+
+.context-footer-builtwith {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.context-footer-builtwith svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.context-footer-middle-links {
+  display: none;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .context-footer-middle-links {
+    display: flex;
+  }
+}
+
+.context-footer-middle-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 150ms ease;
+  cursor: pointer;
+}
+
+.context-footer-middle-link:hover {
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   GIANT RESPONSIVE WATERMARK AT FOOTER BOTTOM
+   -------------------------------------------------------------------------- */
+.context-footer-watermark {
+  position: relative;
+  z-index: 60;
+  height: var(--footer-watermark-height);
+  width: 100%;
+  overflow: hidden;
+  background: #0d0d0f;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.context-footer-watermark-svg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  letter-spacing: -0.05em;
+  mix-blend-mode: plus-lighter;
+}
